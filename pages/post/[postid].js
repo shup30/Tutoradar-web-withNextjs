@@ -17,6 +17,7 @@ class SinglePost extends Component {
   state = {
     post: "",
     redirectToHome: false,
+    redirectToBack: false,
     redirectToSignin: false,
     like: false,
     likes: 0,
@@ -77,13 +78,13 @@ class SinglePost extends Component {
   };
 
   deletePost = () => {
-    const postId = this.props.match.params.postId;
+    const postId = this.props.quota;
     const token = isAuthenticated().token;
     remove(postId, token).then(data => {
       if (data.error) {
         console.log(data.error);
       } else {
-        this.setState({ redirectToHome: true });
+        this.setState({ redirectToBack: true });
       }
     });
   };
@@ -115,15 +116,13 @@ class SinglePost extends Component {
             objectFit: "cover"
           }}
         />
-
         <button onClick={this.likeToggle}>
           <i className="far fa-thumbs-up text-success bg-dark" />
           {likes} Like
-        </button> &nbsp;
-        <span className="button is-primary">
-          <Link href={`/`}>
-            <strong> Back to posts </strong>
-          </Link>
+        </button>{" "}
+        &nbsp;
+        <span className="button is-primary" onClick={() => Router.back()}>
+          <strong> Back to posts </strong>
         </span>
         &nbsp;
         {isAuthenticated().user &&
@@ -143,7 +142,6 @@ class SinglePost extends Component {
               </button>
             </>
           )}
-
         <div>
           {isAuthenticated().user && isAuthenticated().user.role === "admin" && (
             <div class="column">
@@ -173,13 +171,20 @@ class SinglePost extends Component {
   };
 
   render() {
-    console.log("REnder Quota:", this.props.quota);
-    const { post, redirectToHome, redirectToSignin } = this.state;
+    console.log("Render Quota:", this.props.quota);
+    const {
+      post,
+      redirectToHome,
+      redirectToSignin,
+      redirectToBack
+    } = this.state;
 
     if (redirectToHome) {
       Router.push("/");
     } else if (redirectToSignin) {
       Router.push("/signin");
+    } else if (redirectToBack) {
+      Router.back();
     }
 
     return (

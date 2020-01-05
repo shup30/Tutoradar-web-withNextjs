@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { singlePost, remove, like, unlike } from "./apiPost";
 import { isAuthenticated } from "../auth";
+import { FiThumbsUp } from "react-icons/fi";
 
 class likeup extends Component {
   constructor() {
@@ -68,19 +69,19 @@ class likeup extends Component {
     return (
       <div className="likebox">
         {like ? (
-          <span
-            style={{ cursor: "pointer" }}
-            onClick={() => this.likeToggle(_id)}
-          >
-            <i className="far fa-thumbs-up"></i>
-            {likes.length}
-          </span>
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={() => this.likeToggle(_id)}
+            >
+              <FiThumbsUp /> &nbsp;
+              {likes.length}
+            </span>
         ) : (
           <span
             style={{ cursor: "pointer" }}
             onClick={() => this.likeToggle(_id)}
           >
-            <i className="fas fa-thumbs-up"></i>
+            <FiThumbsUp />
             &nbsp; {likes.length}
           </span>
         )}

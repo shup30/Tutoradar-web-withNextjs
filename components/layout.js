@@ -9,10 +9,6 @@ export default ({ children }) => {
         <title>Tutoradar</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <script
-          defer
-          src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-        ></script>
         <link
           rel="stylesheet"
           type="text/css"
@@ -27,14 +23,12 @@ export default ({ children }) => {
       <header>
         <Navbar />
       </header>
-      <body>
-      {children}
-      </body>
+      <body>{children}</body>
       <footer className="footer">
         <div className="content has-text-centered">
           <p>
-            Developed by <a href="https://tutoradar.com">S. Patil</a>. The source
-            code is licensed by
+            Developed by <a href="https://tutoradar.com">S. Patil</a>. The
+            source code is licensed by
             <a href="http://opensource.org/licenses/mit-license.php"> MIT</a>.
             The website content is licensed{" "}
             <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">

@@ -25,7 +25,7 @@ export default function Home() {
                 </span>
               </div>
               <div className="control">
-                <span className="button is-white is-outlined">Search</span>
+                <span className="button is-link is-outlined">Search</span>
               </div>
             </div>
           </div>

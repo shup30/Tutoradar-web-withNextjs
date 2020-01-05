@@ -46,13 +46,13 @@ class RenderPost extends Component {
                     <nav className="level is-mobile">
                       <div className="level-left">
                         <a className="level-item">
-                          <span className="tag is-dark">{post.postType}</span>
+                          <span className="tag is-white">{post.postType}</span>
                         </a>
                         <a className="level-item">
-                          <span className="tag is-dark">{post.category}</span>
+                          <span className="tag is-white">{post.category}</span>
                         </a>
                         <a className="level-item">
-                          <span className="tag is-dark">
+                          <span className="tag is-white">
                             {post.freeOrPaid}
                           </span>
                         </a>

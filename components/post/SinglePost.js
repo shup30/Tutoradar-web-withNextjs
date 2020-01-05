@@ -129,9 +129,9 @@ class SinglePost extends Component {
           on {new Date(post.created).toDateString()}
         </p>
         <div className="column">
-          <Link href={`/`} className="button is-primary">
-            <a>Back to posts</a>
-          </Link>
+          <span className="button is-primary">
+            Back to postz
+          </span>
 
           {isAuthenticated().user &&
             isAuthenticated().user._id === post.postedBy._id && (

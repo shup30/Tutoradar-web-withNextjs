@@ -12,6 +12,7 @@ class Posts extends Component {
       page: 1,
       App_toggle: false,
       Free_toggle: false,
+      Free_toggle: false,
       cat: "",
       fop: "",
       ptq: "",
@@ -59,7 +60,7 @@ class Posts extends Component {
   FilterChangeFree = async () => {
     if (!this.state.Free_toggle) {
       await this.setState({
-        fop: "Paid",
+        fop: "Free",
         Free_toggle: true
       });
       this.loadPosts(
@@ -72,6 +73,32 @@ class Posts extends Component {
       await this.setState({
         fop: "",
         Free_toggle: false
+      });
+      this.loadPosts(
+        this.state.page,
+        this.state.cat,
+        this.state.fop,
+        this.state.ptq
+      );
+    }
+  };
+
+  FilterChangePaid = async () => {
+    if (!this.state.Paid_toggle) {
+      await this.setState({
+        fop: "Paid",
+        Paid_toggle: true
+      });
+      this.loadPosts(
+        this.state.page,
+        this.state.cat,
+        this.state.fop,
+        this.state.ptq
+      );
+    } else {
+      await this.setState({
+        fop: "",
+        Paid_toggle: false
       });
       this.loadPosts(
         this.state.page,
@@ -181,25 +208,26 @@ class Posts extends Component {
           <div className="columns">
             <div className="column">
               <nav
-                className="breadcrumb has-succeeds-separator"
+                className="breadcrumb has-arrow-separator"
                 aria-label="breadcrumbs"
               >
                 <ul>
                   <li>
                     <Link href="/programming">
-                      <a>Programming</a>
+                      <strong>Programming</strong>
                     </Link>
-                  </li>
+                  </li>{" "}
+                  &nbsp;
                   <li className="is-active">
                     <Link href="#" aria-current="page">
-                      {this.props.bread}
+                      <strong> {this.props.bread} </strong>
                     </Link>
                   </li>
                 </ul>
               </nav>
             </div>
           </div>
-          <div className="columns">
+          <div className="columns" id="shadow-column">
             <div className="column is-1 is-hidden-mobile">
               <span>
                 <img
@@ -214,7 +242,7 @@ class Posts extends Component {
               <h2
                 className="title is-3 is-pulled-left"
                 style={{
-                  color: "#090130"
+                  color: "#000",
                 }}
               >
                 {!posts.length
@@ -232,7 +260,7 @@ class Posts extends Component {
             </div>
           </div>
           <div className="columns">
-           <div className="column is-10">
+            <div className="column is-9">
               <div className="column">
                 <div className="list">
                   <div className="list-header">
@@ -244,7 +272,6 @@ class Posts extends Component {
                 </div>
               </div>
               <br></br>
-              <hr></hr>
               <br></br>
               <div className="column">
                 <div className="columns is-centered">
@@ -256,8 +283,8 @@ class Posts extends Component {
                     >
                       {page > 1 ? (
                         <button
-                        className="button is-black is-outlined pagination-next"
-                        onClick={() => this.loadLess(1)}
+                          className="button is-black is-outlined pagination-next"
+                          onClick={() => this.loadLess(1)}
                         >
                           Previous
                         </button>
@@ -266,7 +293,7 @@ class Posts extends Component {
                       )}
                       {posts.length ? (
                         <button
-                          className="button is-black is-outlined pagination-next"
+                          className="button is-grey is-outlined pagination-next"
                           onClick={() => this.loadMore(1)}
                         >
                           Next page
@@ -281,7 +308,7 @@ class Posts extends Component {
             </div>
             <div className="column is-3 is-hidden-mobile">
               <section>
-                <br/>
+                <br />
                 <div className="panel is-info">
                   <p className="panel-heading">Filter Courses</p>
                   <p className="panel-sub">Type</p>
