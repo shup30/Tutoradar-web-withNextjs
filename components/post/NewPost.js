@@ -92,7 +92,7 @@ class NewPost extends Component {
   newPostForm = (title, body, url) => (
     <form id="postform">
       <div className="field" style={{ textAlign: "center" }}>
-      <h1 className="title is-2 is-capitalized" style={{fontFamily: 'Roboto', color: "#fff"}}>Create a new Resource</h1>
+      <h1 className="title is-2 is-capitalized" style={{fontFamily: 'Roboto'}}>Create a new Resource</h1>
         <hr></hr>
         <label className="label">URL</label>
         <input
@@ -242,7 +242,7 @@ class NewPost extends Component {
       <div className="field" style={{ textAlign: "center" }}>
         <button
           onClick={this.clickSubmit}
-          className="button is-outlined is-success"
+          className="button is-outlined is-link"
         >
           Upload Post
         </button>

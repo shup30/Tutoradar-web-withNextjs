@@ -37,9 +37,9 @@ class RenderPost extends Component {
                   <div className="media-content">
                     <div className="content">
                       <p>
-                        <Link href={`/post/${post._id}`}>
+                        <a href={`${post.url}`}>
                           <span className="title is-5 is-capitalized">{post.title}</span>
-                        </Link>
+                        </a>
                         <br />
                       </p>
                     </div>

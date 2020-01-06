@@ -32,7 +32,7 @@ export default class NavBar extends React.Component {
           <div className="navbar-brand">
             <span className="navbar-item">
               <Link href="/">
-                <a>[[--Logo--]]</a>
+                <img src="/images/tut3.png" height="70px" width="200px"/>
               </Link>
             </span>
 

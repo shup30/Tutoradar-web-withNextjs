@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { FaSearch } from "react-icons/fa";
+
 
 export default function Home() {
   return (
@@ -16,16 +18,16 @@ export default function Home() {
     dium is-clearfix"
               >
                 <input
-                  className="input"
+                  className="input is-warning"
                   type="text"
                   placeholder="Search tutorials"
                 />
                 <span className="icon is-left">
-                  <i className="fas fa-search"></i>
+                  <FaSearch/>
                 </span>
               </div>
               <div className="control">
-                <span className="button is-link is-outlined">Search</span>
+                <span className="button is-dark is-outlined is-inverted">Search</span>
               </div>
             </div>
           </div>

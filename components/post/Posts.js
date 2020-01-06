@@ -227,22 +227,23 @@ class Posts extends Component {
               </nav>
             </div>
           </div>
-          <div className="columns" id="shadow-column">
+          <div className="columns is-mobile" id="shadow-column">
             <div className="column is-1 is-hidden-mobile">
               <span>
                 <img
                   src={`../../images/${this.props.image}`}
                   alt={this.props.alt}
-                  width="100"
-                  height="100"
+                  width="200"
+                  height="200"
                 />
               </span>
             </div>
-            <div className="column is-7">
+            <div className="column is-8">
               <h2
                 className="title is-3 is-pulled-left"
                 style={{
                   color: "#000",
+                  fontWeight: "500"
                 }}
               >
                 {!posts.length
@@ -255,7 +256,13 @@ class Posts extends Component {
                 the best {title} courses, tutorials and other related resources.
               </p>
             </div>
-            <div className="column">
+            <div className="column is-3 is-hidden-tablet">
+            <img
+                  src={`../../images/${this.props.image}`}
+                  alt={this.props.alt}
+                  width="200"
+                  height="200"
+                />
               <br />
             </div>
           </div>
@@ -293,7 +300,7 @@ class Posts extends Component {
                       )}
                       {posts.length ? (
                         <button
-                          className="button is-grey is-outlined pagination-next"
+                          className="button is-black is-inverted pagination-next"
                           onClick={() => this.loadMore(1)}
                         >
                           Next page
