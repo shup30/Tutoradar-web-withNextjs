@@ -116,12 +116,12 @@ export default class NavBar extends React.Component {
                 {!isAuthenticated() && (
                   <React.Fragment>
                     <div className="buttons">
-                      <span className="button is-grey is-outlined">
+                    <span className="button is-link is-outlined">
                         <Link href="/signin">
                           <strong> Log in</strong>
                         </Link>
                       </span>
-                      <span className="button is-warning is-outlined">
+                      <span className="button is-link is-outlined">
                         <Link href="/signup">
                           <strong>Sign up</strong>
                         </Link>

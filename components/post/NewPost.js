@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { isAuthenticated } from "../auth";
 import { create } from "./apiPost";
 import Link from "next/link";
+import { FaUpload } from "react-icons/fa";
 
 class NewPost extends Component {
   constructor() {
@@ -92,7 +93,7 @@ class NewPost extends Component {
   newPostForm = (title, body, url) => (
     <form id="postform">
       <div className="field" style={{ textAlign: "center" }}>
-      <h1 className="title is-2 is-capitalized" style={{fontFamily: 'Roboto'}}>Create a new Resource</h1>
+      <h1 className="title is-2 is-capitalized">Create a new Resource</h1>
         <hr></hr>
         <label className="label">URL</label>
         <input
@@ -143,7 +144,7 @@ class NewPost extends Component {
             />
             <span class="file-cta">
               <span class="file-icon">
-                <i class="fas fa-upload"></i>
+                  <FaUpload/>
               </span>
               <span class="file-label">Choose a file…</span>
             </span>
@@ -182,8 +183,8 @@ class NewPost extends Component {
               value="Video"
               onChange={this.handleChange("postType")}
             ></input>
-            Video
-          </label>
+           &nbsp; Video
+          </label>&nbsp;&nbsp;
           <label className="radio">
             <input
               type="radio"
@@ -191,8 +192,8 @@ class NewPost extends Component {
               value="Book"
               onChange={this.handleChange("postType")}
             ></input>
-            Book
-          </label>
+          &nbsp;  Book
+          </label>&nbsp;&nbsp;&nbsp;
           <label className="radio">
             <input
               type="radio"
@@ -200,8 +201,8 @@ class NewPost extends Component {
               value="Article"
               onChange={this.handleChange("postType")}
             ></input>
-            Article/Blog-Post
-          </label>
+           &nbsp; Article/Blog-Post
+          </label>&nbsp;&nbsp;&nbsp;
           <label className="radio">
             <input
               type="radio"
@@ -209,13 +210,13 @@ class NewPost extends Component {
               value="App"
               onChange={this.handleChange("postType")}
             ></input>
-            App
+           &nbsp; App
           </label>
         </div>
       </div>
 
       <div className="field" style={{ textAlign: "center" }}>
-        <label className="label">Is it Free Or Paid</label>
+        <label className="label">Is It Free Or Paid</label>
         <div className="control">
           <label className="radio">
             <input
@@ -224,8 +225,8 @@ class NewPost extends Component {
               value="Free"
               onChange={this.handleChange("freeOrPaid")}
             ></input>
-            Free
-          </label>
+            &nbsp; Free
+          </label> &nbsp;&nbsp;&nbsp;
           <label className="radio">
             <input
               type="radio"
@@ -233,7 +234,7 @@ class NewPost extends Component {
               value="Paid"
               onChange={this.handleChange("freeOrPaid")}
             ></input>
-            Paid
+           &nbsp; Paid
           </label>
         </div>
       </div>
@@ -244,7 +245,7 @@ class NewPost extends Component {
           onClick={this.clickSubmit}
           className="button is-outlined is-link"
         >
-          Upload Post
+          <strong>Upload Post</strong>
         </button>
       </div>
     </form>

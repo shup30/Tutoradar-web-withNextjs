@@ -16,10 +16,11 @@ export default function Webdev() {
               <div className="tile is-ancestor">
                   <div className="tile is-parent">
                     <article className="tile is-child box notification is-white">
+                    <p className="title">
                     <Link href="/python">
-                      <p className="title">Python</p>
+                      <a>Python</a>
                       </Link>
-
+                    </p>
                     </article>
                   </div>
 

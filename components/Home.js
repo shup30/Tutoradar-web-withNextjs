@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 
-
 export default function Home() {
   return (
     <div>
@@ -23,11 +22,13 @@ export default function Home() {
                   placeholder="Search tutorials"
                 />
                 <span className="icon is-left">
-                  <FaSearch/>
+                  <FaSearch />
                 </span>
               </div>
               <div className="control">
-                <span className="button is-dark is-outlined is-inverted">Search</span>
+                <span className="button is-dark is-outlined is-inverted">
+                  Search
+                </span>
               </div>
             </div>
           </div>
