@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Link from "next/link";
 import DefaultPost from "../../public/images/courses.png";
 import Likeup from "./likeup";
+import Router from "next/router";
 
 class RenderPost extends Component {
   constructor() {
@@ -38,7 +39,9 @@ class RenderPost extends Component {
                     <div className="content">
                       <p>
                         <a href={`${post.url}`}>
-                          <span className="title is-5 is-capitalized">{post.title}</span>
+                          <span className="title is-5 is-capitalized">
+                            {post.title}
+                          </span>
                         </a>
                         <br />
                       </p>
@@ -58,6 +61,11 @@ class RenderPost extends Component {
                         </a>
                       </div>
                     </nav>
+                  </div>
+                  <div className="media-right">
+                    <Link href={`/post/${post._id}`}>
+                      <button className="button is-black is-small is-rounded is-inverted">View Details</button>
+                    </Link>
                   </div>
                   <div className="media-right">
                     <Likeup post={post} />

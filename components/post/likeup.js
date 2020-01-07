@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { singlePost, remove, like, unlike } from "./apiPost";
 import { isAuthenticated } from "../auth";
 import { FiThumbsUp } from "react-icons/fi";
+import Router from "next/router";
 
 class likeup extends Component {
   constructor() {
@@ -64,11 +65,14 @@ class likeup extends Component {
 
   render() {
     const { _id, likes } = this.props.post;
-    const { like } = this.state;
+    const { like, redirectToSignin } = this.state;
     console.log("DD:", _id, likes);
-    return (
-      <div className="likebox">
-        {like ? (
+    if (redirectToSignin) {
+      Router.push("/signin");
+    } else {
+      return (
+        <div className="likebox">
+          {like ? (
             <span
               style={{ cursor: "pointer" }}
               onClick={() => this.likeToggle(_id)}
@@ -76,17 +80,18 @@ class likeup extends Component {
               <FiThumbsUp /> &nbsp;
               {likes.length}
             </span>
-        ) : (
-          <span
-            style={{ cursor: "pointer" }}
-            onClick={() => this.likeToggle(_id)}
-          >
-            <FiThumbsUp />
-            &nbsp; {likes.length}
-          </span>
-        )}
-      </div>
-    );
+          ) : (
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={() => this.likeToggle(_id)}
+            >
+              <FiThumbsUp />
+              &nbsp; {likes.length}
+            </span>
+          )}
+        </div>
+      );
+    }
   }
 }
 
