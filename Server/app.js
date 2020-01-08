@@ -45,9 +45,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(expressValidator());
 app.use(cors());
-app.use("/", postRoutes);
-app.use("/", authRoutes);
-app.use("/", userRoutes);
+app.use("/api", postRoutes);
+app.use("/api", authRoutes);
+app.use("/api", userRoutes);
 app.use(function(err, req, res, next) {
   if (err.name === "UnauthorizedError") {
     res.status(401).json({ Error: "Unauthorised user" });

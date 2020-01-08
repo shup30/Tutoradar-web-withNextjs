@@ -42,15 +42,15 @@ export default class Signup extends Component {
 
   signupForm = (name, email, password) => (
     <form id="signupform">
-      <h2 className="title">SIGN UP</h2>
-      <hr />
+      <h2 className="title">Sign Up</h2>
       <div className="field">
         <label className="label">Name</label>
         <input
           onChange={this.handleChange("name")}
           type="text"
-          className="input"
+          className="input is-white"
           value={name}
+          placeholder="Name"
         ></input>
       </div>
       <div className="field">
@@ -58,8 +58,9 @@ export default class Signup extends Component {
         <input
           onChange={this.handleChange("email")}
           type="email"
-          className="input"
+          className="input is-white"
           value={email}
+          placeholder="Your Email Address"
         ></input>
       </div>
       <div className="field">
@@ -67,13 +68,14 @@ export default class Signup extends Component {
         <input
           onChange={this.handleChange("password")}
           type="password"
-          className="input"
+          className="input is-white"
           value={password}
+          placeholder="Password"
         ></input>
       </div>
       <br />
-      <div className="field">
-        <button onClick={this.clickSubmit} className="button is-primary">
+      <div className="field" id="field-button">
+        <button onClick={this.clickSubmit} className="button is-link">
           Submit
         </button>
       </div>

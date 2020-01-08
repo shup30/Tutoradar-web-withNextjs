@@ -258,37 +258,41 @@ a.navbar-item.is-active,
 }
 
 #signinform {
-  background-color: rgb(36, 1, 63);
-  padding: 40px;
-  color: rgb(255, 255, 255);
-  .title {
-    color: #fff;
-  }
-  .label {
-    color: rgb(255, 255, 255);
-  }
-  .field {
-    text-align: center;
-  }
-}
-
-#signupform {
+  box-shadow: -12px -12px 12px 0 rgba(255, 255, 255, 1),
+  12px 12px 12px 0 rgba(0, 0, 0, 0.12);
   background-color: rgb(255, 255, 255);
   padding: 40px;
   color: rgb(0, 0, 0);
   .title {
-    color: #fff;
+    color: rgb(0, 0, 0);
   }
   .label {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     display: block;
     font-size: 1rem;
     font-weight: 700;
-    text-align: center;
   }
-  .field {
-    text-align: center;
+}
+
+#signupform {
+  box-shadow: -12px -12px 12px 0 rgba(255, 255, 255, 1),
+  12px 12px 12px 0 rgba(0, 0, 0, 0.12);
+  background-color: rgb(255, 255, 255);
+  padding: 40px;
+  color: rgb(0, 0, 0);
+  .title {
+    color: rgb(0, 0, 0);
   }
+  .label {
+    color: rgb(0, 0, 0);
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+  } 
+}
+
+#field-button {
+  text-align: center;
 }
 
 .tag {

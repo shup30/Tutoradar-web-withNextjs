@@ -42,15 +42,15 @@ export default class Signin extends Component {
 
   signinForm = (email, password) => (
     <form id="signinform">
-      <h2 className="title">SIGN IN</h2>
-      <hr />
+      <h2 className="title">Sign In</h2>
       <div className="field">
         <label className="label">Email</label>
         <input
           onChange={this.handleChange("email")}
           type="email"
-          className="input"
+          className="input is-white"
           value={email}
+          placeholder="Email"
         ></input>
       </div>
       <br />
@@ -59,15 +59,16 @@ export default class Signin extends Component {
         <input
           onChange={this.handleChange("password")}
           type="password"
-          className="input"
+          className="input is-white"
           value={password}
+          placeholder="Password"
         ></input>
       </div>
       <br />
-      <div className="field">
+      <div className="field" id="field-button">
         <button
           onClick={this.clickSubmit}
-          className="button is-raised is-primary"
+          className="button is-link"
         >
           Submit
         </button>
