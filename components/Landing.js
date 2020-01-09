@@ -9,7 +9,7 @@ export default class Landing extends Component {
     const settings = {
       dots: true,
       infinite: true,
-      speed: 500,
+      speed: 900,
       responsive: [
         {
           breakpoint: 5000,
@@ -35,8 +35,8 @@ export default class Landing extends Component {
         {
           breakpoint: 800,
           settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
+            slidesToShow: 1,
+            slidesToScroll: 2
           }
         }
       ]

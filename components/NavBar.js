@@ -152,7 +152,7 @@ class NavBar extends React.Component {
                         <FaUserCircle />
                         <Link href={`/user/${isAuthenticated().user._id}`}>
                           <span className="pro-text">
-                            <p>{`${isAuthenticated().user.name}'s Profile`}</p>
+                            <p>{`View Profile`}</p>
                           </span>
                         </Link>
                       </span>
