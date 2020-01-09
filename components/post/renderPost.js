@@ -35,8 +35,8 @@ class RenderPost extends Component {
                       />
                     </p>
                   </figure>
-                  <div className="media-content is-inline-block">
-                    <div className="content">
+                  <div className="media-content">
+                    <div className="content is-inline-flex-mobile">
                       <p>
                         <a href={`${post.url}`}>
                           <span className="title is-5 is-capitalized">
