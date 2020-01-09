@@ -87,7 +87,7 @@ class Profile extends Component {
             </div>
 
             <div className="columns">
-              <div className="lead">
+              <div className="column">
                 <p>Hello {user.name}</p>
                 <p>Email: {user.email}</p>
                 <p>{`Joined ${new Date(user.created).toDateString()}`}</p>

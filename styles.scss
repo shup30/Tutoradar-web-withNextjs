@@ -324,6 +324,7 @@ a.navbar-item.is-active,
 .button.is-black {
   box-shadow: -12px -12px 12px 0 rgba(255, 255, 255, 1),
     12px 12px 12px 0 rgba(0, 0, 0, 0.12);
+  overflow: hidden;
 }
 
 #shadow-column {
@@ -347,6 +348,6 @@ a.navbar-item.is-active,
 
 #resource {
   text-align: center;
-  font-size: 25px;
-  color: rgb(41, 0, 107);
+  font-size: 15px;
+  color: rgb(255, 255, 255);
 }

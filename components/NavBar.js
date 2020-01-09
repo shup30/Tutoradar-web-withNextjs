@@ -117,7 +117,7 @@ class NavBar extends React.Component {
               {isAuthenticated() && (
               <span className="navbar-item">
                 <Link href="/post/create">
-                  <span className="button is-info is-rounded is-inverted">
+                  <span className="button is-info is-small">
                     <span id="resource"><FaLeanpub/></span>
                    &nbsp; Upload a Resource
                   </span>
