@@ -206,26 +206,28 @@ class Posts extends Component {
       <React.Fragment>
         <div className="container">
           <div className="columns">
-            <div className="column">
-              <nav
-                className="breadcrumb has-arrow-separator"
-                aria-label="breadcrumbs"
-              >
-                <ul>
-                  <li>
-                    <Link href="/programming">
-                      <strong>Programming</strong>
-                    </Link>
-                  </li>{" "}
-                  &nbsp;
-                  <li className="is-active">
-                    <Link href="#" aria-current="page">
-                      <strong> {this.props.bread} </strong>
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+            <section className="section">
+              <div className="column">
+                <nav
+                  className="breadcrumb has-arrow-separator"
+                  aria-label="breadcrumbs"
+                >
+                  <ul>
+                    <li>
+                      <Link href="/programming">
+                        <strong>Programming</strong>
+                      </Link>
+                    </li>{" "}
+                    &nbsp;
+                    <li className="is-active">
+                      <Link href="#" aria-current="page">
+                        <strong> {this.props.bread} </strong>
+                      </Link>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </section>
           </div>
           <div className="columns is-mobile" id="shadow-column">
             <div className="column is-1 is-hidden-mobile">
@@ -257,12 +259,12 @@ class Posts extends Component {
               </p>
             </div>
             <div className="column is-3 is-hidden-tablet">
-            <img
-                  src={`../../images/${this.props.image}`}
-                  alt={this.props.alt}
-                  width="200"
-                  height="200"
-                />
+              <img
+                src={`../../images/${this.props.image}`}
+                alt={this.props.alt}
+                width="200"
+                height="200"
+              />
               <br />
             </div>
           </div>

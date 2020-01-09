@@ -4,8 +4,6 @@ import ShowPost from "../components/post/showPost";
 
 export default () => (
   <Layout>
-    <section className="section">
       <ShowPost />
-    </section>
   </Layout>
 );
