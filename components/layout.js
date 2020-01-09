@@ -23,7 +23,7 @@ export default ({ children }) => {
       <header>
         <Navbar />
       </header>
-      <body>{children}</body>
+      {children}
       <footer className="footer">
         <div className="content has-text-centered">
           <p>

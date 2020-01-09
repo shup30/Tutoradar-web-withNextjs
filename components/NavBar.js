@@ -1,14 +1,19 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
-import Router from "next/router";
+import Router, { withRouter } from "next/router";
 import { signout, isAuthenticated } from "./auth";
+import { FaUserCircle, FaLeanpub } from "react-icons/fa";
 
 const toggleStyles = event => {
   document.querySelector("#burger").classList.toggle("is-active");
   document.querySelector("#navbarmenu").classList.toggle("is-active");
 };
 
-export default class NavBar extends React.Component {
+const getvalue = () => {
+  return isAuthenticated().user;
+};
+
+class NavBar extends React.Component {
   componentDidMount() {
     document.querySelectorAll(".navbar-link").forEach(function(navbarLink) {
       navbarLink.addEventListener("click", function() {
@@ -30,9 +35,9 @@ export default class NavBar extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            <span className="navbar-item">
+            <span className="navbar-item" id="logo-span">
               <Link href="/">
-                <a><img src="/images/tut3.png" height="70px" width="200px"/></a>
+                <img src="/images/tut3.png" height="70px" width="200px" />
               </Link>
             </span>
 
@@ -70,8 +75,8 @@ export default class NavBar extends React.Component {
                 </Link>
               </span>
               <span className="navbar-item">
-                <Link href="/projects">
-                  <a> Project ideas</a>
+                <Link href={`/blog/`}>
+                  <a>{`Blog`}</a>
                 </Link>
               </span>
 
@@ -109,6 +114,16 @@ export default class NavBar extends React.Component {
                   </span>
                 </div>
               </div>
+              {isAuthenticated() && (
+              <span className="navbar-item">
+                <Link href="/post/create">
+                  <span className="button is-info is-rounded is-inverted">
+                    <span id="resource"><FaLeanpub/></span>
+                   &nbsp; Upload a Resource
+                  </span>
+                </Link>
+              </span>
+              )}
             </div>
 
             <div className="navbar-end">
@@ -116,7 +131,7 @@ export default class NavBar extends React.Component {
                 {!isAuthenticated() && (
                   <React.Fragment>
                     <div className="buttons">
-                    <span className="button is-link is-outlined">
+                      <span className="button is-link is-outlined">
                         <Link href="/signin">
                           <strong> Log in</strong>
                         </Link>
@@ -134,11 +149,16 @@ export default class NavBar extends React.Component {
                 {isAuthenticated() && (
                   <React.Fragment>
                     <div className="buttons">
-                    <Link href="/post/create">
-                      <span className="button is-link is-outlined">
-                          Upload a Resource
+                      <span className="profile-tab">
+                        <FaUserCircle />
+                        <Link href={`/user/${isAuthenticated().user._id}`}>
+                          <span className="pro-text">
+                            <p>{`${
+                              isAuthenticated().user.name
+                            }'s Profile`}</p>
+                          </span>
+                        </Link>
                       </span>
-                      </Link>
                       <span
                         className="button is-link is-outlined"
                         onClick={() => signout(() => redirectToHome())}
@@ -156,3 +176,5 @@ export default class NavBar extends React.Component {
     );
   }
 }
+
+export default withRouter(NavBar);

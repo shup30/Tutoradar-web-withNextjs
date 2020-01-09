@@ -3,6 +3,7 @@ import { isAuthenticated } from "../auth";
 import { create } from "./apiPost";
 import Link from "next/link";
 import { FaUpload } from "react-icons/fa";
+import Router from "next/router";
 
 class NewPost extends Component {
   constructor() {
@@ -93,7 +94,7 @@ class NewPost extends Component {
   newPostForm = (title, body, url) => (
     <form id="postform">
       <div className="field" style={{ textAlign: "center" }}>
-      <h1 className="title is-2 is-capitalized">Create a new Resource</h1>
+        <h1 className="title is-2 is-capitalized">Create a new Resource</h1>
         <hr></hr>
         <label className="label">URL</label>
         <input
@@ -104,7 +105,6 @@ class NewPost extends Component {
           placeholder="Url Link for resource"
         />
       </div>
-
 
       <div className="field" style={{ textAlign: "center" }}>
         <label className="label">Resource Title</label>
@@ -144,7 +144,7 @@ class NewPost extends Component {
             />
             <span class="file-cta">
               <span class="file-icon">
-                  <FaUpload/>
+                <FaUpload />
               </span>
               <span class="file-label">Choose a file…</span>
             </span>
@@ -183,8 +183,9 @@ class NewPost extends Component {
               value="Video"
               onChange={this.handleChange("postType")}
             ></input>
-           &nbsp; Video
-          </label>&nbsp;&nbsp;
+            &nbsp; Video
+          </label>
+          &nbsp;&nbsp;
           <label className="radio">
             <input
               type="radio"
@@ -192,8 +193,9 @@ class NewPost extends Component {
               value="Book"
               onChange={this.handleChange("postType")}
             ></input>
-          &nbsp;  Book
-          </label>&nbsp;&nbsp;&nbsp;
+            &nbsp; Book
+          </label>
+          &nbsp;&nbsp;&nbsp;
           <label className="radio">
             <input
               type="radio"
@@ -201,8 +203,9 @@ class NewPost extends Component {
               value="Article"
               onChange={this.handleChange("postType")}
             ></input>
-           &nbsp; Article/Blog-Post
-          </label>&nbsp;&nbsp;&nbsp;
+            &nbsp; Article/Blog-Post
+          </label>
+          &nbsp;&nbsp;&nbsp;
           <label className="radio">
             <input
               type="radio"
@@ -210,7 +213,7 @@ class NewPost extends Component {
               value="App"
               onChange={this.handleChange("postType")}
             ></input>
-           &nbsp; App
+            &nbsp; App
           </label>
         </div>
       </div>
@@ -226,7 +229,8 @@ class NewPost extends Component {
               onChange={this.handleChange("freeOrPaid")}
             ></input>
             &nbsp; Free
-          </label> &nbsp;&nbsp;&nbsp;
+          </label>{" "}
+          &nbsp;&nbsp;&nbsp;
           <label className="radio">
             <input
               type="radio"
@@ -234,12 +238,12 @@ class NewPost extends Component {
               value="Paid"
               onChange={this.handleChange("freeOrPaid")}
             ></input>
-           &nbsp; Paid
+            &nbsp; Paid
           </label>
         </div>
       </div>
 
-      <br/>
+      <br />
       <div className="field" style={{ textAlign: "center" }}>
         <button
           onClick={this.clickSubmit}
@@ -267,7 +271,7 @@ class NewPost extends Component {
     } = this.state;
 
     if (redirectToProfile) {
-      return <Link href={`/user/${user._id}`} />;
+      Router.push(`/user/${user._id}`);
     }
 
     return (
@@ -292,7 +296,15 @@ class NewPost extends Component {
               ""
             )}
 
-            {this.newPostForm(title, body, url, category, photo, postType, freeOrPaid)}
+            {this.newPostForm(
+              title,
+              body,
+              url,
+              category,
+              photo,
+              postType,
+              freeOrPaid
+            )}
           </div>
         </div>
       </div>

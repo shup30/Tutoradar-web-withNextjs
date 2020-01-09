@@ -34,7 +34,7 @@ export default function Home() {
           </div>
 
           <div className="tabs is-boxed is-medium">
-            <ul clssName="tab-bar">
+            <ul className="tab-bar">
               <li>
                 <Link href="/programming">
                   <a>Programming</a>
