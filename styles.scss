@@ -315,13 +315,14 @@ a.navbar-item.is-active,
 
 .tag {
   box-shadow: -12px -12px 12px 0 white, 0px 12px 10px 0 rgba(0, 0, 0, 0.12);
+  overflow: hidden;
 }
 
 .panel {
   box-shadow: -12px -12px 12px 0 rgba(255, 255, 255, 1),
     12px 12px 12px 0 rgba(0, 0, 0, 0.12);
 }
-.button.is-black {
+#next-button {
   box-shadow: -12px -12px 12px 0 rgba(255, 255, 255, 1),
     12px 12px 12px 0 rgba(0, 0, 0, 0.12);
   overflow: hidden;
@@ -348,6 +349,7 @@ a.navbar-item.is-active,
 
 #resource {
   text-align: center;
-  font-size: 15px;
-  color: rgb(255, 255, 255);
+  font-size: 20px;
+  color: rgb(62, 0, 104);
 }
+ 

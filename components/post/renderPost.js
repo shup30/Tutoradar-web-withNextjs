@@ -35,7 +35,7 @@ class RenderPost extends Component {
                       />
                     </p>
                   </figure>
-                  <div className="media-content">
+                  <div className="media-content is-block">
                     <div className="content">
                       <p>
                         <a href={`${post.url}`}>
@@ -43,6 +43,12 @@ class RenderPost extends Component {
                             {post.title}
                           </span>
                         </a>
+                        &nbsp;&nbsp;
+                        <Link href={`/post/${post._id}`}>
+                          <button className="button is-black is-small is-rounded">
+                            View Detail
+                          </button>
+                        </Link>
                         <br />
                       </p>
                     </div>
@@ -61,11 +67,6 @@ class RenderPost extends Component {
                         </a>
                       </div>
                     </nav>
-                  </div>
-                  <div className="media-right">
-                    <Link href={`/post/${post._id}`}>
-                      <button className="button is-black is-small is-rounded is-inverted">View Details</button>
-                    </Link>
                   </div>
                   <div className="media-right">
                     <Likeup post={post} />

@@ -115,14 +115,13 @@ class NavBar extends React.Component {
                 </div>
               </div>
               {isAuthenticated() && (
-              <span className="navbar-item">
-                <Link href="/post/create">
-                  <span className="button is-info is-small">
-                    <span id="resource"><FaLeanpub/></span>
-                   &nbsp; Upload a Resource
-                  </span>
-                </Link>
-              </span>
+                <span className="navbar-item">
+                  <Link href="/post/create">
+                    <button className="button is-white is-rounded is-outlined">
+                      Upload Resource
+                    </button>
+                  </Link>
+                </span>
               )}
             </div>
 
@@ -153,9 +152,7 @@ class NavBar extends React.Component {
                         <FaUserCircle />
                         <Link href={`/user/${isAuthenticated().user._id}`}>
                           <span className="pro-text">
-                            <p>{`${
-                              isAuthenticated().user.name
-                            }'s Profile`}</p>
+                            <p>{`${isAuthenticated().user.name}'s Profile`}</p>
                           </span>
                         </Link>
                       </span>

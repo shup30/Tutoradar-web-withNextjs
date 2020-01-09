@@ -293,6 +293,7 @@ class Posts extends Component {
                       {page > 1 ? (
                         <button
                           className="button is-black is-outlined pagination-next"
+                          id="next-button"
                           onClick={() => this.loadLess(1)}
                         >
                           Previous
@@ -303,6 +304,7 @@ class Posts extends Component {
                       {posts.length ? (
                         <button
                           className="button is-black is-inverted pagination-next"
+                          id="next-button"
                           onClick={() => this.loadMore(1)}
                         >
                           Next page
