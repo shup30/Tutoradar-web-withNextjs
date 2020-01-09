@@ -35,7 +35,7 @@ class RenderPost extends Component {
                       />
                     </p>
                   </figure>
-                  <div className="media-content is-block">
+                  <div className="media-content is-inline-block">
                     <div className="content">
                       <p>
                         <a href={`${post.url}`}>
