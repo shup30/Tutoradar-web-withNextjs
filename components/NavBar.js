@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import Link from "next/link";
 import Router, { withRouter } from "next/router";
 import { signout, isAuthenticated } from "./auth";
-import { FaUserCircle, FaLeanpub } from "react-icons/fa";
 
 const toggleStyles = event => {
   document.querySelector("#burger").classList.toggle("is-active");
@@ -117,8 +116,8 @@ class NavBar extends React.Component {
               {isAuthenticated() && (
                 <span className="navbar-item">
                   <Link href="/post/create">
-                    <button className="button is-white is-rounded is-outlined">
-                      Upload Resource
+                    <button className="button is-white is-outlined is-small">
+                      <strong>Upload A Resource</strong>
                     </button>
                   </Link>
                 </span>
@@ -148,16 +147,13 @@ class NavBar extends React.Component {
                 {isAuthenticated() && (
                   <React.Fragment>
                     <div className="buttons">
-                      <span className="profile-tab">
-                        <FaUserCircle />
+                      <span className="button is-link is-outlined is-small">
                         <Link href={`/user/${isAuthenticated().user._id}`}>
-                          <span className="pro-text">
-                            <p>{`View Profile`}</p>
-                          </span>
+                          <span> View Profile</span>
                         </Link>
                       </span>
                       <span
-                        className="button is-link is-outlined"
+                        className="button is-link is-outlined is-small"
                         onClick={() => signout(() => redirectToHome())}
                       >
                         Sign Out

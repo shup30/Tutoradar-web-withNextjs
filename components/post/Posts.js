@@ -209,10 +209,15 @@ class Posts extends Component {
             <section className="section">
               <div className="column">
                 <nav
-                  className="breadcrumb has-arrow-separator"
+                  className="breadcrumb has-arrow-separator is-medium"
                   aria-label="breadcrumbs"
                 >
                   <ul>
+                    <li>
+                      <Link href="/">
+                        <strong>Home</strong>
+                      </Link>
+                    </li>
                     <li>
                       <Link href="/programming">
                         <strong>Programming</strong>
@@ -220,7 +225,7 @@ class Posts extends Component {
                     </li>{" "}
                     &nbsp;
                     <li className="is-active">
-                      <Link href="#" aria-current="page">
+                      <Link href="#">
                         <strong> {this.props.bread} </strong>
                       </Link>
                     </li>
@@ -303,11 +308,11 @@ class Posts extends Component {
                       )}
                       {posts.length ? (
                         <button
-                          className="button is-black is-inverted pagination-next"
+                          className="button is-dark is-inverted pagination-next"
                           id="next-button"
                           onClick={() => this.loadMore(1)}
                         >
-                          Next page
+                          Next Page
                         </button>
                       ) : (
                         ""

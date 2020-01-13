@@ -6,7 +6,7 @@ const showPost = () => {
   const title = "Python";
   const image = "Python.png";
   const alt = "Learn Python from the best title tutorials/courses online";
-  const bread = "Python"
+  const bread = "python"
 
   return (
       <Posts list={list} title={title} image={image} alt={alt} bread={bread} />

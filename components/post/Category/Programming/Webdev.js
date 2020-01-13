@@ -14,83 +14,224 @@ export default function Webdev() {
           <div className="column">
             <div className="column">
               <div className="tile is-ancestor">
-                  <div className="tile is-parent">
-                    <article className="tile is-child box notification is-white">
-                    <p className="title">
-                    <Link href="/python">
-                      <a>Python</a>
-                      </Link>
-                    </p>
+                <div className="tile is-parent">
+                  <Link href="/python">
+                    <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Python</p>
+                      </div>
                     </article>
-                  </div>
+                  </Link>
+                </div>
 
                 <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Javascript</p>
-                  </article>
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://seeklogo.com/images/J/javascript-logo-8892AEFCAC-seeklogo.com.png"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Javascript</p>
+                      </div>
+                    </article>
                 </div>
                 <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">React</p>
-                  </article>
-                </div>
-              </div>
-              <div className="tile is-ancestor">
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Vue</p>
-                  </article>
-                </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Angular</p>
-                  </article>
-                </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Svelte</p>
-                  </article>
-                </div>
-              </div>
-              <div className="tile is-ancestor">
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">One</p>
-                  </article>
-                </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Three</p>
-                  </article>
-                </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Four</p>
-                  </article>
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://cdn.worldvectorlogo.com/logos/react.svg"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">React</p>
+                      </div>
+                    </article>
                 </div>
               </div>
               <div className="tile is-ancestor">
                 <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Two</p>
-                  </article>
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://mpng.pngfly.com/20180718/cbh/kisspng-vue-js-javascript-library-angularjs-react-vue-js-5b4ebe1bc45884.1915769815318871318042.jpg"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Vue</p>
+                      </div>
+                    </article>
                 </div>
                 <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Three</p>
-                  </article>
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://angular.io/assets/images/logos/angular/angular.png"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Angularjs</p>
+                      </div>
+                    </article>
                 </div>
                 <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Four</p>
-                  </article>
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://mpng.pngfly.com/20180718/cbh/kisspng-vue-js-javascript-library-angularjs-react-vue-js-5b4ebe1bc45884.1915769815318871318042.jpg"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Vue</p>
+                      </div>
+                    </article>
                 </div>
               </div>
               <div className="tile is-ancestor">
                 <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Four</p>
-                  </article>
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfZSZ9s2UD__J-Z4dpNbCWK4aHxLd3ZBdlbZOAyFVV4R83ey0HFA&s"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Svelte</p>
+                      </div>
+                    </article>
+                </div>
+                <div className="tile is-parent">
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://www.stickpng.com/assets/images/58481791cef1014c0b5e4994.png"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Php</p>
+                      </div>
+                    </article>
+                </div>
+                <div className="tile is-parent">
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj8cg1gkZ30YYZZ_k08x2iOlz5B2dvs5FhHAfWvE0KPEYcPt7j&s"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Node Js</p>
+                      </div>
+                    </article>
+                </div>
+              </div>
+              <div className="tile is-ancestor">
+                <div className="tile is-parent">
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://mpng.pngfly.com/20180718/cbh/kisspng-vue-js-javascript-library-angularjs-react-vue-js-5b4ebe1bc45884.1915769815318871318042.jpg"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Vue</p>
+                      </div>
+                    </article>
+                </div>
+                <div className="tile is-parent">
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://mpng.pngfly.com/20180718/cbh/kisspng-vue-js-javascript-library-angularjs-react-vue-js-5b4ebe1bc45884.1915769815318871318042.jpg"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Vue</p>
+                      </div>
+                    </article>
+                </div>
+                <div className="tile is-parent">
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://mpng.pngfly.com/20180718/cbh/kisspng-vue-js-javascript-library-angularjs-react-vue-js-5b4ebe1bc45884.1915769815318871318042.jpg"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Vue</p>
+                      </div>
+                    </article>
+                </div>
+              </div>
+              <div className="tile is-ancestor">
+                <div className="tile is-parent">
+                <article className="tile is-child box notification is-white is-flex">
+                      <div className="topic-container">
+                        <img
+                          width="50"
+                          height="50"
+                          src="https://mpng.pngfly.com/20180718/cbh/kisspng-vue-js-javascript-library-angularjs-react-vue-js-5b4ebe1bc45884.1915769815318871318042.jpg"
+                        />
+                      </div> 
+                      <div className="tile-spacer">
+                      </div>
+                      <div className="topic-container">
+                        <p className="title">Vue</p>
+                      </div>
+                    </article>
                 </div>
               </div>
             </div>

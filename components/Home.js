@@ -17,7 +17,7 @@ export default function Home() {
     dium is-clearfix"
               >
                 <input
-                  className="input is-warning"
+                  className="input is-warning is-small"
                   type="text"
                   placeholder="Search tutorials"
                 />
@@ -26,7 +26,7 @@ export default function Home() {
                 </span>
               </div>
               <div className="control">
-                <span className="button is-dark is-outlined is-inverted">
+                <span className="button is-dark is-outlined is-inverted is-small">
                   Search
                 </span>
               </div>

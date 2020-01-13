@@ -57,7 +57,7 @@ body {
 
 #hero-title {
   color: rgb(255, 255, 255);
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
   text-align: center;
@@ -342,6 +342,7 @@ a.navbar-item.is-active,
 }
 
 .tile {
+  cursor: pointer;
   a {
     text-decoration: none !important;
   }
@@ -352,4 +353,16 @@ a.navbar-item.is-active,
   font-size: 20px;
   color: rgb(62, 0, 104);
 }
- 
+
+.breadcrumb {
+  cursor: pointer;
+}
+
+.topic-container {
+  align-items: auto;
+}
+
+.tile-spacer {
+  padding-left: 20px;
+  padding-right: 20px;
+}
