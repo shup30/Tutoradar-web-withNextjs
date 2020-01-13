@@ -8,10 +8,6 @@ const toggleStyles = event => {
   document.querySelector("#navbarmenu").classList.toggle("is-active");
 };
 
-const getvalue = () => {
-  return isAuthenticated().user;
-};
-
 class NavBar extends React.Component {
   componentDidMount() {
     document.querySelectorAll(".navbar-link").forEach(function(navbarLink) {

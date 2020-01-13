@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { singlePost, remove, like, unlike } from "./apiPost";
+import { singlePost, like, unlike } from "./apiPost";
 import { isAuthenticated } from "../auth";
 import { FiThumbsUp } from "react-icons/fi";
 import Router from "next/router";
