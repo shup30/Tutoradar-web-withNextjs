@@ -12,7 +12,6 @@ class likeup extends Component {
       like: false,
       likes: 0,
       redirectToHome: false,
-      redirectToSignin: false
     };
   }
 
@@ -40,7 +39,7 @@ class likeup extends Component {
 
   likeToggle = id => {
     if (!isAuthenticated()) {
-      this.setState({ redirectToSignin: true });
+      Router.push("/signin");
       return false;
     }
     let callApi = this.state.like ? unlike : like;
@@ -65,33 +64,30 @@ class likeup extends Component {
 
   render() {
     const { _id, likes } = this.props.post;
-    const { like, redirectToSignin } = this.state;
+    const { like } = this.state;
     console.log("DD:", _id, likes);
-    if (redirectToSignin) {
-      Router.push("/signin");
-    } else {
-      return (
-        <div className="likebox">
-          {like ? (
-            <span
-              style={{ cursor: "pointer" }}
-              onClick={() => this.likeToggle(_id)}
-            >
-              <FiThumbsUp /> &nbsp;
-              {likes.length}
-            </span>
-          ) : (
-            <span
-              style={{ cursor: "pointer" }}
-              onClick={() => this.likeToggle(_id)}
-            >
-              <FiThumbsUp />
-              &nbsp; {likes.length}
-            </span>
-          )}
-        </div>
-      );
-    }
+
+    return (
+      <div className="likebox">
+        {like ? (
+          <span
+            style={{ cursor: "pointer" }}
+            onClick={() => this.likeToggle(_id)}
+          >
+            <FiThumbsUp /> &nbsp;
+            {likes.length}
+          </span>
+        ) : (
+          <span
+            style={{ cursor: "pointer" }}
+            onClick={() => this.likeToggle(_id)}
+          >
+            <FiThumbsUp />
+            &nbsp; {likes.length}
+          </span>
+        )}
+      </div>
+    );
   }
 }
 
