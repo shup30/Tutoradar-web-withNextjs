@@ -7,11 +7,9 @@ import {
 } from "../../components/post/apiPost";
 import Link from "next/link";
 import { isAuthenticated } from "../../components/auth";
-import Comment from "../../components/post/Comment";
 import Layout from "../../components/layout";
 import DefaultPost from "../../public/images/courses.png";
 import Router, { withRouter } from "next/router";
-import fetch from "isomorphic-unfetch";
 
 class SinglePost extends Component {
   state = {

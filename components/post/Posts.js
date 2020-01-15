@@ -222,7 +222,7 @@ class Posts extends Component {
                       <Link href="/programming">
                         <strong>Programming</strong>
                       </Link>
-                    </li>{" "}
+                    </li>
                     &nbsp;
                     <li className="is-active">
                       <Link href="#">

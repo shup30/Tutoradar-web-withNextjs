@@ -45,7 +45,7 @@ class RenderPost extends Component {
                         </a>
                         &nbsp;&nbsp;
                         <Link href={`/post/${post._id}`}>
-                          <button className="button is-black is-small is-rounded is-outlined">
+                          <button className="button is-info is-small is-rounded is-outlined">
                             View Details
                           </button>
                         </Link>

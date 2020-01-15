@@ -1,28 +1,29 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import LazyLoad from "react-lazyload";
+
 import "../styles.scss";
 
 export default class Landing extends Component {
   render() {
     const settings = {
       dots: true,
-      infinite: true,
-      speed: 900,
+      infinite: false,
+      speed: 800,
       responsive: [
         {
           breakpoint: 5000,
           settings: {
             slidesToShow: 5,
-            slidesToScroll: 3
+            slidesToScroll: 2
           }
         },
         {
           breakpoint: 1600,
           settings: {
             slidesToShow: 5,
-            slidesToScroll: 3
+            slidesToScroll: 2
           }
         },
         {
@@ -36,7 +37,7 @@ export default class Landing extends Component {
           breakpoint: 800,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 2
+            slidesToScroll: 1
           }
         }
       ]
@@ -68,13 +69,15 @@ export default class Landing extends Component {
                     <div className="card-image">
                       <figure className="image">
                         <Link href="/web-development">
-                          <img
-                            src="/assets/images/Engineering.jpg"
-                            alt="Park Savoy"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/development-web.png"
+                              alt="Park Savoy"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -95,17 +98,19 @@ export default class Landing extends Component {
 
               <div className="carousel-item">
                 <div className="column">
-                  <div className="card is-slightly-rounded">
+                  <div className="card">
                     <div className="card-image">
                       <figure className="image">
                         <Link href="/app-development">
-                          <img
-                            src="/assets/images/Software-Testing.jpg"
-                            alt="Mobile App"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/app-dev.png"
+                              alt="Mobile App"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -130,13 +135,15 @@ export default class Landing extends Component {
                     <div className="card-image">
                       <figure className="image">
                         <Link href="/">
-                          <img
-                            src="/assets/images/Data-Science.jpg"
-                            alt="Data Science"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/Data-Science.jpg"
+                              alt="Data Science"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -161,13 +168,15 @@ export default class Landing extends Component {
                     <div className="card-image">
                       <figure className="image">
                         <Link href="/">
-                          <img
-                            src="/assets/images/Software-Testing.jpg"
-                            alt="Park Savoy"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/Software-Testing.jpg"
+                              alt="Park Savoy"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -192,13 +201,15 @@ export default class Landing extends Component {
                     <div className="card-image">
                       <figure className="image">
                         <Link href="/">
-                          <img
-                            src="/assets/images/Data-Science2.jpg"
-                            alt="Park Savoy"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/Game-dev.png"
+                              alt="Park Savoy"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -223,13 +234,15 @@ export default class Landing extends Component {
                     <div className="card-image">
                       <figure className="image">
                         <Link href="/">
-                          <img
-                            src="/assets/images/Software-Testing.jpg"
-                            alt="Park Savoy"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/Software-Testing.jpg"
+                              alt="Park Savoy"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -239,37 +252,6 @@ export default class Landing extends Component {
                           <span className="title is-6 is-capitalized">
                             <Link href="/">
                               <a>Software Testing </a>
-                            </Link>
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="carousel-item">
-                <div className="column">
-                  <div className="card is-slightly-rounded">
-                    <div className="card-image">
-                      <figure className="image">
-                        <Link href="/">
-                          <img
-                            src="/assets/images/Data-Science.jpg"
-                            alt="Park Savoy"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
-                        </Link>
-                      </figure>
-                    </div>
-                    <div className="card-content">
-                      <div className="content">
-                        <p>
-                          <span className="title is-6 is-capitalized">
-                            <Link href="/">
-                              <a> Databases </a>
                             </Link>
                           </span>
                         </p>
@@ -311,45 +293,16 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/web-development">
-                          <img
-                            src="/assets/images/Engineering.jpg"
-                            alt="Park Savoy"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
-                        </Link>
-                      </figure>
-                    </div>
-                    <div className="card-content">
-                      <div className="content">
-                        <p>
-                          <span className="title is-6 is-capitalized">
-                            <Link href="/web-development">
-                              <a> Graphic Design</a>
-                            </Link>
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="carousel-item">
-                <div className="column">
-                  <div className="card is-slightly-rounded">
-                    <div className="card-image">
-                      <figure className="image">
                         <Link href="/app-development">
-                          <img
-                            src="/assets/images/Software-Testing.jpg"
-                            alt="Mobile App"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/Graphic-design-tools.jpg"
+                              alt="Mobile App"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -358,7 +311,7 @@ export default class Landing extends Component {
                         <p>
                           <span className="title is-6 is-capitalized">
                             <Link href="/app-development">
-                              <a> Design Tool </a>
+                              <a>Graphic Design</a>
                             </Link>
                           </span>
                         </p>
@@ -374,13 +327,15 @@ export default class Landing extends Component {
                     <div className="card-image">
                       <figure className="image">
                         <Link href="/">
-                          <img
-                            src="/assets/images/Data-Science.jpg"
-                            alt="Data Science"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/ux.jpg"
+                              alt="Data Science"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -405,13 +360,15 @@ export default class Landing extends Component {
                     <div className="card-image">
                       <figure className="image">
                         <Link href="/">
-                          <img
-                            src="/assets/images/Software-Testing.jpg"
-                            alt="Park Savoy"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/game-design.jpg"
+                              alt="Park Savoy"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -436,13 +393,15 @@ export default class Landing extends Component {
                     <div className="card-image">
                       <figure className="image">
                         <Link href="/">
-                          <img
-                            src="/assets/images/Data-Science2.jpg"
-                            alt="Park Savoy"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/design-thinking.jpg"
+                              alt="Park Savoy"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -467,13 +426,15 @@ export default class Landing extends Component {
                     <div className="card-image">
                       <figure className="image">
                         <Link href="/">
-                          <img
-                            src="/assets/images/Software-Testing.jpg"
-                            alt="Park Savoy"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/3d-animation.jpg"
+                              alt="3d Animation"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -498,13 +459,15 @@ export default class Landing extends Component {
                     <div className="card-image">
                       <figure className="image">
                         <Link href="/">
-                          <img
-                            src="/assets/images/Data-Science.jpg"
-                            alt="Park Savoy"
-                            className="is-slightly-rounded"
-                            width="100"
-                            height="300"
-                          />
+                          <LazyLoad height={200}>
+                            <img
+                              src="/assets/images/fashion-design.jpg"
+                              alt="Fashion Designing"
+                              className="is-slightly-rounded"
+                              width="100"
+                              height="300"
+                            />
+                          </LazyLoad>
                         </Link>
                       </figure>
                     </div>
@@ -513,7 +476,7 @@ export default class Landing extends Component {
                         <p>
                           <span className="title is-6 is-capitalized">
                             <Link href="/">
-                              <a> Fashion </a>
+                              <a> Fashion Designing</a>
                             </Link>
                           </span>
                         </p>
@@ -551,7 +514,7 @@ export default class Landing extends Component {
                       <figure className="image">
                         <Link href="/web-development">
                           <img
-                            src="/assets/images/Engineering.jpg"
+                            src="/assets/images/creative-business.jpg"
                             alt="Park Savoy"
                             className="is-slightly-rounded"
                             width="100"

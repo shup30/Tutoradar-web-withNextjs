@@ -95,12 +95,11 @@ class NewPost extends Component {
     <form id="postform">
       <div className="field" style={{ textAlign: "center" }}>
         <h1 className="title is-2 is-capitalized">Create a new Resource</h1>
-        <hr></hr>
         <label className="label">URL</label>
         <input
           onChange={this.handleChange("url")}
           type="text"
-          className="input is-link"
+          className="input"
           value={url}
           placeholder="Url Link for resource"
         />
@@ -112,7 +111,7 @@ class NewPost extends Component {
           onChange={this.handleChange("title")}
           type="text"
           placeholder="Type a Title for Resource"
-          className="input is-link"
+          className="input"
           value={title}
         />
       </div>
@@ -120,11 +119,11 @@ class NewPost extends Component {
       <br />
 
       <div className="field" style={{ textAlign: "center" }}>
-        <label className="label">Body</label>
+        <label className="label">Description</label>
         <textarea
           onChange={this.handleChange("body")}
           type="text"
-          className="input is-link is-large"
+          className="textarea is-large"
           value={body}
         />
       </div>
