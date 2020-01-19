@@ -99,7 +99,7 @@ class SinglePost extends Component {
     return (
       <div className="column">
         <img
-          src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
+          src={post.thumbnailUrl}
           alt={post.title}
           onError={i => (i.target.src = "/images/Avatar.png")}
           className="img-thunbnail"
@@ -184,9 +184,9 @@ class SinglePost extends Component {
     const { post, redirectToHome, redirectToSignin, comments } = this.state;
 
     if (redirectToHome) {
-      return Router.push=('/');
+      return Router.push('/');
     } else if (redirectToSignin) {
-      return Router.push=('/signin');
+      return Router.push('/signin');
     }
 
     return (

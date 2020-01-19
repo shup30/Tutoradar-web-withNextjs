@@ -31,7 +31,7 @@ class RenderPost extends Component {
                       <img
                         src={post.thumbnailUrl}
                         alt={post.title}
-                        onError={i => (i.target.src = `${DefaultPost}`)}
+                        onError={DefaultPost}
                         className="img-thunbnail"
                       />
                     </p>
