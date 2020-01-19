@@ -13,6 +13,9 @@ const postSchema = new mongoose.Schema({
     url: {
         type: String,
     },
+    thumbnailUrl: {
+        type: String
+    },
     photo: {
         data: Buffer,
         contenType: String

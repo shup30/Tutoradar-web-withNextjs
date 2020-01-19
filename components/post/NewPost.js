@@ -12,6 +12,7 @@ class NewPost extends Component {
       title: "",
       body: "",
       url: "",
+      thumbnailUrl: "",
       category: "",
       postType: "",
       photo: "",
@@ -30,7 +31,7 @@ class NewPost extends Component {
   }
 
   isValid = () => {
-    const { title, body, url, fileSize } = this.state;
+    const { title, body, url, fileSize, thumbnailUrl } = this.state;
     if (fileSize > 100000) {
       this.setState({
         error: "File size should be less than 100kb",
@@ -49,6 +50,17 @@ class NewPost extends Component {
     ) {
       this.setState({
         error: "A valid Url is required",
+        loading: false
+      });
+      return false;
+    }
+    if (
+      !/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/.test(
+        thumbnailUrl
+      )
+    ) {
+      this.setState({
+        error: "A valid Thumbnail Url is required",
         loading: false
       });
       return false;
@@ -81,6 +93,7 @@ class NewPost extends Component {
             title: "",
             body: "",
             url: "",
+            thumbnailUrl: "",
             category: "Web Development",
             postType: "",
             freeOrPaid: "",
@@ -91,7 +104,7 @@ class NewPost extends Component {
     }
   };
 
-  newPostForm = (title, body, url) => (
+  newPostForm = (title, body, url, thumbnailUrl) => (
     <form id="postform">
       <div className="field" style={{ textAlign: "center" }}>
         <h1 className="title is-2 is-capitalized">Create a new Resource</h1>
@@ -149,6 +162,17 @@ class NewPost extends Component {
             </span>
           </label>
         </div>
+      </div>
+
+      <div className="field" style={{ textAlign: "center" }}>
+        <label className="label">Thumbnail Url</label>
+        <input
+          onChange={this.handleChange("thumbnailUrl")}
+          type="text"
+          className="input"
+          value={thumbnailUrl} 
+          placeholder="Url Link for thumbnail"
+        />
       </div>
 
       <br />
@@ -262,6 +286,7 @@ class NewPost extends Component {
       postType,
       freeOrPaid,
       url,
+      thumbnailUrl,
       photo,
       user,
       error,
@@ -299,6 +324,7 @@ class NewPost extends Component {
               title,
               body,
               url,
+              thumbnailUrl,
               category,
               photo,
               postType,

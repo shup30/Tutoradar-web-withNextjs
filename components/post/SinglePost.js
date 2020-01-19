@@ -3,7 +3,7 @@ import { singlePost, remove, like, unlike } from "./apiPost";
 import Link from "next/link";
 import { isAuthenticated } from "../auth";
 import Comment from "./Comment";
-import { withRouter } from "next/router";
+import Router, { withRouter } from "next/router";
 
 class SinglePost extends Component {
   constructor(props) {
@@ -184,9 +184,9 @@ class SinglePost extends Component {
     const { post, redirectToHome, redirectToSignin, comments } = this.state;
 
     if (redirectToHome) {
-      return <Redirect to={`/`} />;
+      return Router.push=('/');
     } else if (redirectToSignin) {
-      return <Redirect to={`/signin`} />;
+      return Router.push=('/signin');
     }
 
     return (

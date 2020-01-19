@@ -12,7 +12,7 @@ class Posts extends Component {
       page: 1,
       App_toggle: false,
       Free_toggle: false,
-      Free_toggle: false,
+      Paid_toggle: false,
       cat: "",
       fop: "",
       ptq: "",
@@ -115,7 +115,7 @@ class Posts extends Component {
         ptq: "App",
         App_toggle: true,
         exceptApp: "is-hidden"
-      });
+      }); 
       this.loadPosts(
         this.state.page,
         this.state.cat,
@@ -301,18 +301,18 @@ class Posts extends Component {
                           id="next-button"
                           onClick={() => this.loadLess(1)}
                         >
-                          Previous
+                         <strong> Previous </strong>
                         </button>
                       ) : (
                         " "
                       )}
                       {posts.length ? (
                         <button
-                          className="button is-dark is-inverted pagination-next"
+                          className="button is-dark is-outlined pagination-next"
                           id="next-button"
                           onClick={() => this.loadMore(1)}
                         >
-                          Next Page
+                         <strong> Next Page </strong>
                         </button>
                       ) : (
                         ""
@@ -340,7 +340,7 @@ class Posts extends Component {
                     <input
                       type="checkbox"
                       name="App"
-                      onClick={this.filterPostByPaid}
+                      onClick={this.FilterChangePaid}
                     />
                     Paid
                   </label>
@@ -372,7 +372,7 @@ class Posts extends Component {
                   <p className="panel-sub">Level</p>
                   <label className="panel-block">
                     <input
-                      type="checkbox"
+                      type="checkbox" 
                       name="App"
                       onClick={this.filterPostByBeginner}
                     />

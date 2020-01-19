@@ -65,7 +65,7 @@ exports.getPosts = async (req, res) => {
         .populate("comments", "text created")
         .populate("comments.postedBy", "_id name")
         .populate("postedBy", "_id name")
-        .select("_id title body created category postType likes freeOrPaid url")
+        .select("_id title body created category postType likes freeOrPaid url thumbnailUrl")
         .limit(perPage)
         .sort({ created: -1 });
     })

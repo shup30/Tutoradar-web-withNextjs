@@ -21,6 +21,7 @@ class RenderPost extends Component {
           const posterName = post.postedBy ? post.postedBy.name : "Unknown";
 
           return (
+            console.log("thumbUrl:" ,post),
             <React.Fragment>
               <div className="list-item" key={post._id}>
                 {console.log(post._id)}
@@ -28,7 +29,7 @@ class RenderPost extends Component {
                   <figure className="media-left">
                     <p className="image is-64x64">
                       <img
-                        src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
+                        src={post.thumbnailUrl}
                         alt={post.title}
                         onError={i => (i.target.src = `${DefaultPost}`)}
                         className="img-thunbnail"
