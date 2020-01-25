@@ -33,7 +33,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="tabs is-boxed is-medium">
+          <div className="tabs is-boxed is-large">
             <ul className="tab-bar">
               <li>
                 <Link href="/programming">
@@ -63,27 +63,6 @@ export default function Home() {
               <li>
                 <Link href="Office">
                   <a>Office</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="Marketing">
-                  <a>Marketing</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="Lifestyle">
-                  <a>Lifestyle</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="Photography">
-                  <a>Photography</a>
-                </Link>
-              </li>
-
-              <li>
-                <Link href="Health">
-                  <a>Health</a>
                 </Link>
               </li>
             </ul>

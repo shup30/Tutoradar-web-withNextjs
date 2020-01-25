@@ -10,7 +10,8 @@ export default class Landing extends Component {
     const settings = {
       dots: true,
       infinite: false,
-      speed: 800,
+      lazyLoad: true,
+      speed: 100,
       responsive: [
         {
           breakpoint: 5000,

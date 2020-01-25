@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { singlePost, remove, like, unlike } from "./apiPost";
 import Link from "next/link";
 import { isAuthenticated } from "../auth";
-import Comment from "./Comment";
+import DefaultPost from "../../public/images/cou3.jpg";
 import Router, { withRouter } from "next/router";
 
 class SinglePost extends Component {
@@ -11,13 +11,25 @@ class SinglePost extends Component {
     this.state = {
       post: "",
       redirectToHome: false,
+      redirectToBack: false,
       redirectToSignin: false,
       like: false,
       likes: 0,
-      comments: [],
-      Que: ""
+      comments: []
     };
   }
+
+  // static async getInitialProps(ctx) {
+  //   const res = await fetch('https://api.github.com/repos/zeit/next.js')
+  //   const json = await res.json()
+  //   return { stars: json.stargazers_count }
+  // }
+
+  // static async getInitialProps(context) {
+  //   const { postid } = context.router.query;
+  //   console.log(postid);
+  //   return { postid };
+  // }
 
   checkLike = likes => {
     const userId = isAuthenticated() && isAuthenticated().user._id;
@@ -25,11 +37,8 @@ class SinglePost extends Component {
     return match;
   };
 
-  componentDidMount = () => {
-    const { router } = this.props;
-    console.log(router.query.postid);
-    const postId = router.query.postid;
-    console.log("Query:", postId);
+  componentDidMount() {
+    const postId = this.props.PostId;
     singlePost(postId).then(data => {
       if (data.error) {
         console.log(data.error);
@@ -42,7 +51,7 @@ class SinglePost extends Component {
         });
       }
     });
-  };
+  }
 
   updateComments = comments => {
     this.setState({ comments });
@@ -71,13 +80,13 @@ class SinglePost extends Component {
   };
 
   deletePost = () => {
-    const postId = this.props.Query;
+    const postId = this.props.quota;
     const token = isAuthenticated().token;
     remove(postId, token).then(data => {
       if (data.error) {
         console.log(data.error);
       } else {
-        this.setState({ redirectToHome: true });
+        this.setState({ redirectToBack: true });
       }
     });
   };
@@ -94,121 +103,165 @@ class SinglePost extends Component {
     const posterId = post.postedBy ? `/user/${post.postedBy._id}` : "";
     const posterName = post.postedBy ? post.postedBy.name : " Unknown";
 
-    const { like, likes } = this.state;
+    const { like, likes, comments } = this.state;
 
     return (
       <div className="column">
         <img
-          src={post.thumbnailUrl}
+          src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
           alt={post.title}
-          onError={i => (i.target.src = "/images/Avatar.png")}
-          className="img-thunbnail"
+          onError={i => (i.target.src = `${DefaultPost}`)}
+          className="img-thumbnail"
           style={{
             height: "300px",
             width: "100%",
             objectFit: "cover"
           }}
         />
-
-        {like ? (
-          <button onClick={this.likeToggle}>
-            <i className="far fa-thumbs-up text-success bg-dark" />
-            {likes} Like
-          </button>
-        ) : (
-          <button onClick={this.likeToggle}>
-            <i className="far fa-thumbs-down text-warning bg-dark" />
-            {likes} Like
-          </button>
-        )}
-
-        <p className="column">{post.body}</p>
-        <br />
-        <p className="font-italic">
-          Posted by <Link href={`${posterId}`}>{posterName} </Link>
-          on {new Date(post.created).toDateString()}
-        </p>
-        <div className="column">
-          <span className="button is-primary">
-            Back to postz
-          </span>
-
-          {isAuthenticated().user &&
-            isAuthenticated().user._id === post.postedBy._id && (
-              <>
-                <Link
-                  to={`/post/edit/${post._id}`}
-                  className="button is-warning"
-                >
-                  <a>Update Post</a>
+        &nbsp;
+        <span id="like-button" onClick={this.likeToggle}>
+          <i className="far fa-thumbs-up text-success bg-dark" />
+          {likes} Like
+        </span>
+        &nbsp;
+        <span className="button is-primary" onClick={() => Router.back()}>
+          <strong> Back to posts </strong>
+        </span>
+        &nbsp;
+        {isAuthenticated().user &&
+          isAuthenticated().user._id === post.postedBy._id && (
+            <>
+              <span className="button is-warning">
+                <Link href={`/post/edit/${post._id}`}>
+                  <strong> Update Post </strong>
                 </Link>
+              </span>
+              &nbsp;
+              <button
+                onClick={this.deleteConfirmed}
+                className="button is-danger"
+              >
+                Delete Post
+              </button>
+            </>
+          )}
+        <div>
+          {isAuthenticated().user && isAuthenticated().user.role === "admin" && (
+            <div class="column">
+              <div className="columns">
+                <h5 className="column">Admin</h5>
+                <p>Edit/Delete as an Admin</p>
+                <span className="button is-warning">
+                  <Link href={`/post/edit/${post._id}`}>
+                    <a> Update Post </a>
+                  </Link>
+                </span>
+                &nbsp;
                 <button
                   onClick={this.deleteConfirmed}
-                  className="button is-danger"
+                  className="button is-raised is-danger"
                 >
                   Delete Post
                 </button>
-              </>
-            )}
-
-          <div>
-            {isAuthenticated().user && isAuthenticated().user.role === "admin" && (
-              <div class="column">
-                <div className="columns">
-                  <h5 className="column">Admin</h5>
-                  <p>Edit/Delete as an Admin</p>
-                  <Link
-                    to={`/post/edit/${post._id}`}
-                    className="button is-warning"
-                  >
-                    <a>Update Post</a>
-                  </Link>
-                  <button
-                    onClick={this.deleteConfirmed}
-                    className="button is-raised is-danger"
-                  >
-                    Delete Post
-                  </button>
-                </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
+        <div>
+          <h4 className="raw"> Description: </h4>
+          <p className="column">{post.body}</p>
+        </div>
+        <br />
       </div>
     );
   };
 
   render() {
-    const { router } = this.props;
-    console.log(router.query.postid);
-    const { post, redirectToHome, redirectToSignin, comments } = this.state;
+    console.log(
+      "Render Quota:",
+      this.props.postId,
+      this.props.router.query.postid,
+      this.props.quota
+    );
+    console.log("initial Props Quota:", this.props);
+    const { postId } = this.props;
+    const {
+      post,
+      redirectToHome,
+      redirectToSignin,
+      redirectToBack
+    } = this.state;
 
     if (redirectToHome) {
-      return Router.push('/');
+      Router.push("/");
     } else if (redirectToSignin) {
-      return Router.push('/signin');
+      Router.push("/signin");
+    } else if (redirectToBack) {
+      Router.back();
     }
-
     return (
-      <div className="container">
-        <h2 className="title">{post.title}</h2>
+      <section className="section">
+        <div className="container">
+          <h2 className="title">{post.title}</h2>
 
-        {!post ? (
-          <div className="hero">
-            <h2>Loading...</h2>
-          </div>
-        ) : (
-          this.renderPost(post)
-        )}
-
-        <Comment
-          postId={post._id}
-          comments={comments.reverse()}
-          updateComments={this.updateComments}
-        />
-      </div>
+          {!post ? (
+            <div className="hero">
+              <h2>Loading...</h2>
+            </div>
+          ) : (
+            this.renderPost(post)
+          )}
+        </div>
+      </section>
     );
   }
 }
 
 export default withRouter(SinglePost);
+
+// static async getInitialProps({ query }) {
+//   const quota = query.postid;
+//   console.log("Quota:", query.postid);
+//   return { quota };
+// }
+
+//   static async getInitialProps() {
+//     const quota = props.postId;
+//     console.log("Quota:", this.props.quota);
+//     return { quota };
+//   }
+
+// componentWillReceiveProps(nextProps) {
+//   if(!_isEqual(nextProps, this.state)){
+//       this.setState(nextProps);
+//   }
+// }
+
+// static getDerivedStateFromProps(props, state) {
+//   if (props.postId != state.ispost) {
+//     return {
+//       ispost: props.postId
+//     };
+//   }
+//   return null;
+// }
+
+//   callpostapi = () => {
+//     const postId = this.props.postId;
+//     console.log("poStId:", postId);
+//     singlePost(postId).then(data => {
+//       if (data.error) {
+//         console.log(data.error);
+//       } else {
+//         this.setState({
+//           post: data,
+//           likes: data.likes.length,
+//           like: this.checkLike(data.likes)
+//         });
+//       }
+//     });
+//   };
+
+//   static getDerivedStateFromProps(props, state) {
+//     return { idpost: props.postId };
+//   }

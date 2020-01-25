@@ -117,7 +117,7 @@ class EditPost extends Component {
         />
       </div>
 
-      <button onClick={this.clickSubmit} className="btn btn-raised btn-primary">
+      <button onClick={this.clickSubmit} className="button is-raised is-primary">
         Update Post
       </button>
     </form>
@@ -132,17 +132,17 @@ class EditPost extends Component {
 
     return (
       <div className="container">
-        <h2 className="mt-5 mb-5">{title}</h2>
+        <h2 className="title is-2">{title}</h2>
 
         <div
-          className="alert alert-danger"
+          className="notification is-danger"
           style={{ display: error ? "" : "none" }}
         >
           {error}
         </div>
 
         {loading ? (
-          <div className="jumbotron text-center">
+          <div className="hero">
             <h2>Loading...</h2>
           </div>
         ) : (
