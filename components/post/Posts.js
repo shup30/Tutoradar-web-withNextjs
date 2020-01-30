@@ -25,11 +25,11 @@ class Posts extends Component {
   componentDidMount() {
     this.setState({
       title: this.props.title,
-      image: this.props.image
+      image: this.props.image,
     });
     this.loadPosts(
       this.state.page,
-      this.state.cat,
+      this.props.cat,
       this.state.fop,
       this.state.ptq
     );
@@ -47,6 +47,7 @@ class Posts extends Component {
   };
 
   loadPosts = (page, cat, fop, ptq) => {
+    console.log(page, cat, fop, ptq);
     const { list } = this.props;
     list(page, cat, fop, ptq).then(data => {
       if (data.error) {
@@ -115,7 +116,7 @@ class Posts extends Component {
         ptq: "App",
         App_toggle: true,
         exceptApp: "is-hidden"
-      }); 
+      });
       this.loadPosts(
         this.state.page,
         this.state.cat,
@@ -194,6 +195,7 @@ class Posts extends Component {
   };
 
   render() {
+    console.log(this.props);
     const {
       posts,
       page,
@@ -301,7 +303,7 @@ class Posts extends Component {
                           id="next-button"
                           onClick={() => this.loadLess(1)}
                         >
-                         <strong> Previous </strong>
+                          <strong> Previous </strong>
                         </button>
                       ) : (
                         " "
@@ -312,7 +314,7 @@ class Posts extends Component {
                           id="next-button"
                           onClick={() => this.loadMore(1)}
                         >
-                         <strong> Next Page </strong>
+                          <strong> Next Page </strong>
                         </button>
                       ) : (
                         ""
@@ -372,7 +374,7 @@ class Posts extends Component {
                   <p className="panel-sub">Level</p>
                   <label className="panel-block">
                     <input
-                      type="checkbox" 
+                      type="checkbox"
                       name="App"
                       onClick={this.filterPostByBeginner}
                     />

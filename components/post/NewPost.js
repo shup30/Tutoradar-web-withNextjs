@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { isAuthenticated } from "../auth";
 import { create } from "./apiPost";
-import Link from "next/link";
 import { FaUpload } from "react-icons/fa";
 import Router from "next/router";
 
@@ -13,6 +12,7 @@ class NewPost extends Component {
       body: "",
       url: "",
       category: "",
+      subcategory: "",
       postType: "",
       photo: "",
       freeOrPaid: "",
@@ -59,7 +59,6 @@ class NewPost extends Component {
   handleChange = name => event => {
     this.setState({ error: "" });
     const value = name === "photo" ? event.target.files[0] : event.target.value;
-
     const fileSize = name === "photo" ? event.target.files[0].size : 0;
     this.postData.set(name, value);
     this.setState({ [name]: value, fileSize });
@@ -82,6 +81,7 @@ class NewPost extends Component {
             body: "",
             url: "",
             category: "Web Development",
+            subcategory: "",
             postType: "",
             freeOrPaid: "",
             redirectToProfile: true
@@ -141,11 +141,11 @@ class NewPost extends Component {
               accept="image/*"
               className="file-input"
             />
-            <span class="file-cta">
-              <span class="file-icon">
+            <span className="file-cta">
+              <span className="file-icon">
                 <FaUpload />
               </span>
-              <span class="file-label">Choose a file…</span>
+              <span className="file-label">Choose a file…</span>
             </span>
           </label>
         </div>
@@ -155,20 +155,70 @@ class NewPost extends Component {
 
       <div className="field" style={{ textAlign: "center" }}>
         <label className="label">Category</label>
-        <div class="control">
-          <div class="select is-info">
+        <div className="control">
+          <div className="select is-info">
             <select
               value={this.state.category}
               onChange={this.handleChange("category")}
             >
               <option>Select option</option>
-              <option>Web Development</option>
+              <option>Programming</option>
               <option>Designing</option>
               <option>Engineering</option>
             </select>
           </div>
         </div>
       </div>
+
+      {this.state.category == "Programming" ? (
+        <div className="field" style={{ textAlign: "center" }}>
+          <label className="label">Sub Category</label>
+          <div className="control">
+            <div className="select is-info">
+              <select
+                value={this.state.subcategory}
+                onChange={this.handleChange("subcategory")}
+              >
+                <option>Select option</option>
+                <option>Python</option>
+                <option>Javascript</option>
+                <option>Php</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      ) : this.state.category == "Designing" ? (
+        <div className="field" style={{ textAlign: "center" }}>
+          <label className="label">Sub Category</label>
+          <div className="control">
+            <div className="select is-info">
+              <select
+                value={this.state.subcategory}
+                onChange={this.handleChange("subcategory")}
+              >
+                <option>Select option</option>
+                <option>Adobe Photoshop</option>
+                <option>Figma</option>
+                <option>Lightroom</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="field" style={{ textAlign: "center" }}>
+          <label className="label">Sub Category</label>
+          <div className="control">
+            <div className="select is-info">
+              <select
+                value={this.state.subcategory}
+                onChange={this.handleChange("subcategory")}
+              >
+                <option>Select Category First</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      )}
 
       <br />
 
@@ -259,6 +309,7 @@ class NewPost extends Component {
       title,
       body,
       category,
+      subcategory,
       postType,
       freeOrPaid,
       url,
@@ -300,6 +351,7 @@ class NewPost extends Component {
               body,
               url,
               category,
+              subcategory,
               photo,
               postType,
               freeOrPaid

@@ -20,24 +20,59 @@ exports.postById = (req, res, next, id) => {
     });
 };
 
-exports.getPosts_category_webdev = async (req, res) => {
-  const currentPage = req.query.page || 1;
-  const perPage = 6;
+// exports.getPosts_category_webdev = async (req, res) => {
+//   const currentPage = req.query.page || 1;
+//   const perPage = 6;
+//   let totalItems;
+//   const postsbycategory = await Post.find({ category: "Web Development" })
+//     .then(count => {
+//       totalItems = count;
+//       return Post.find({ category: "Web Development" })
+//         .skip((currentPage - 1) * perPage)
+//         .populate("comments", "text created")
+//         .populate("comments.postedBy", "_id name")
+//         .populate("postedBy", "_id name")
+//         .select("_id title body created likes")
+//         .limit(perPage)
+//         .sort({ created: -1 });
+//     })
+//     .then(postsbycategory => {
+//       res.status(200).json(postsbycategory);
+//     })
+//     .catch(err => console.log(err));
+// };
+
+exports.getPosts_programming = async (req, res) => {
+  const currentPage = req.query.page;
+  const ptq = req.query.ptq;
+  const fop = req.query.fop;
+  const subcat = req.query.cat;
+  const catQuery = subcat === "Python" || subcat === "Javascript" || subcat === "Php" ? { subcategory: subcat } : {};
+  const postTypeQuery =
+    ptq === "App" || ptq === "Video" || ptq === "Book"
+      ? { postType: ptq }
+      : {};
+  const freeOrPaidQuery =
+    fop === "Free" || fop === "Paid" ? { freeOrPaid: fop } : {};
+  console.log("CURRENTPAGE:", currentPage, catQuery, postTypeQuery, freeOrPaidQuery);
+  const perPage = 10;
   let totalItems;
-  const postsbycategory = await Post.find({ category: "Web Development" })
+
+  const posts = await Post.find({ $and: [{ category: "Programming" }, catQuery, postTypeQuery, freeOrPaidQuery] })
+    .countDocuments()
     .then(count => {
       totalItems = count;
-      return Post.find({ category: "Web Development" })
+      return Post.find({ $and: [{ category: "Programming" }, catQuery, postTypeQuery, freeOrPaidQuery] })
         .skip((currentPage - 1) * perPage)
         .populate("comments", "text created")
         .populate("comments.postedBy", "_id name")
         .populate("postedBy", "_id name")
-        .select("_id title body created likes")
+        .select("_id title body created category subcategory postType likes freeOrPaid url")
         .limit(perPage)
         .sort({ created: -1 });
     })
-    .then(postsbycategory => {
-      res.status(200).json(postsbycategory);
+    .then(posts => {
+      res.status(200).json(posts);
     })
     .catch(err => console.log(err));
 };
@@ -46,26 +81,28 @@ exports.getPosts = async (req, res) => {
   const currentPage = req.query.page;
   const ptq = req.query.ptq;
   const fop = req.query.fop;
+  const cat = req.query.cat;
+  const catQuery = cat === "Programming" || cat === "Designing" || cat === "Engineering" ? { category: cat } : {};
   const postTypeQuery =
     ptq === "App" || ptq === "Video" || ptq === "Book"
       ? { postType: ptq }
       : {};
   const freeOrPaidQuery =
     fop === "Free" || fop === "Paid" ? { freeOrPaid: fop } : {};
-  console.log("CURRENTPAGE:", currentPage, postTypeQuery, freeOrPaidQuery);
+  console.log("CURRENTPAGE:", currentPage, catQuery, postTypeQuery, freeOrPaidQuery);
   const perPage = 10;
   let totalItems;
 
-  const posts = await Post.find({ $and: [postTypeQuery, freeOrPaidQuery] })
+  const posts = await Post.find({ $and: [catQuery, postTypeQuery, freeOrPaidQuery] })
     .countDocuments()
     .then(count => {
       totalItems = count;
-      return Post.find({ $and: [postTypeQuery, freeOrPaidQuery] })
+      return Post.find({ $and: [catQuery, postTypeQuery, freeOrPaidQuery] })
         .skip((currentPage - 1) * perPage)
         .populate("comments", "text created")
         .populate("comments.postedBy", "_id name")
         .populate("postedBy", "_id name")
-        .select("_id title body created category postType likes freeOrPaid url")
+        .select("_id title body created category subcategory postType likes freeOrPaid url")
         .limit(perPage)
         .sort({ created: -1 });
     })

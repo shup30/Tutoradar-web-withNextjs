@@ -25,6 +25,9 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  subcategory: {
+    type: String
+  },
   postType: {
     type: String,
     required: true

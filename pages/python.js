@@ -1,9 +1,9 @@
 import React from "react";
 import Layout from "../components/layout";
-import ShowPost from "../components/post/showPost";
+import ShowPython from "../components/post/Category/Programming/Python/showPython.js";
 
 export default () => (
   <Layout>
-      <ShowPost />
+    <ShowPython />
   </Layout>
 );

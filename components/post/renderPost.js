@@ -67,7 +67,7 @@ class RenderPost extends Component {
                           </a>
                           <a className="level-item">
                             <span className="tag is-white">
-                              {post.category}
+                              {post.subcategory}
                             </span>
                           </a>
                           <a className="level-item">
