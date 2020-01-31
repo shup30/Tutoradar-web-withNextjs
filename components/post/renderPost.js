@@ -50,7 +50,7 @@ class RenderPost extends Component {
                             </span>
                           </a>
                           &nbsp;&nbsp;
-                          <Link href="/post/[postid]" as={`/post/${post._id}`}>
+                          <Link href="/course/[postid]" as={`/course/${post._id}`}>
                             <button className="button is-info is-small is-rounded is-outlined">
                               View Details
                             </button>

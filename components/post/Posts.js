@@ -66,7 +66,7 @@ class Posts extends Component {
       });
       this.loadPosts(
         this.state.page,
-        this.state.cat,
+        this.props.cat,
         this.state.fop,
         this.state.ptq
       );
@@ -77,7 +77,7 @@ class Posts extends Component {
       });
       this.loadPosts(
         this.state.page,
-        this.state.cat,
+        this.props.cat,
         this.state.fop,
         this.state.ptq
       );
@@ -92,7 +92,7 @@ class Posts extends Component {
       });
       this.loadPosts(
         this.state.page,
-        this.state.cat,
+        this.props.cat,
         this.state.fop,
         this.state.ptq
       );
@@ -103,7 +103,7 @@ class Posts extends Component {
       });
       this.loadPosts(
         this.state.page,
-        this.state.cat,
+        this.props.cat,
         this.state.fop,
         this.state.ptq
       );
@@ -119,7 +119,7 @@ class Posts extends Component {
       });
       this.loadPosts(
         this.state.page,
-        this.state.cat,
+        this.props.cat,
         this.state.fop,
         this.state.ptq
       );
@@ -131,7 +131,7 @@ class Posts extends Component {
       });
       this.loadPosts(
         this.state.page,
-        this.state.cat,
+        this.props.cat,
         this.state.fop,
         this.state.ptq
       );
@@ -147,7 +147,7 @@ class Posts extends Component {
       });
       this.loadPosts(
         this.state.page,
-        this.state.cat,
+        this.props.cat,
         this.state.fop,
         this.state.ptq
       );
@@ -159,7 +159,7 @@ class Posts extends Component {
       });
       this.loadPosts(
         this.state.page,
-        this.state.cat,
+        this.props.cat,
         this.state.fop,
         this.state.ptq
       );
@@ -175,7 +175,7 @@ class Posts extends Component {
       });
       this.loadPosts(
         this.state.page,
-        this.state.cat,
+        this.props.cat,
         this.state.fop,
         this.state.ptq
       );
@@ -187,7 +187,7 @@ class Posts extends Component {
       });
       this.loadPosts(
         this.state.page,
-        this.state.cat,
+        this.props.cat,
         this.state.fop,
         this.state.ptq
       );
