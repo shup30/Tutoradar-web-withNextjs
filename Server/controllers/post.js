@@ -47,22 +47,22 @@ exports.getPosts_programming = async (req, res) => {
   const ptq = req.query.ptq;
   const fop = req.query.fop;
   const subcat = req.query.cat;
-  const catQuery = subcat === "Python" || subcat === "Javascript" || subcat === "Php" ? { subcategory: subcat } : {};
+  const subcatQuery = subcat === "Python" || subcat === "Javascript" || subcat === "Php" ? { subcategory: subcat } : {};
   const postTypeQuery =
     ptq === "App" || ptq === "Video" || ptq === "Book"
       ? { postType: ptq }
       : {};
   const freeOrPaidQuery =
     fop === "Free" || fop === "Paid" ? { freeOrPaid: fop } : {};
-  console.log("CURRENTPAGE:", currentPage, catQuery, postTypeQuery, freeOrPaidQuery);
+  console.log("CURRENTPAGE:", currentPage, subcatQuery, postTypeQuery, freeOrPaidQuery);
   const perPage = 10;
   let totalItems;
 
-  const posts = await Post.find({ $and: [{ category: "Programming" }, catQuery, postTypeQuery, freeOrPaidQuery] })
+  const posts = await Post.find({ $and: [{ category: "Programming" }, subcatQuery, postTypeQuery, freeOrPaidQuery] })
     .countDocuments()
     .then(count => {
       totalItems = count;
-      return Post.find({ $and: [{ category: "Programming" }, catQuery, postTypeQuery, freeOrPaidQuery] })
+      return Post.find({ $and: [{ category: "Programming" }, subcatQuery, postTypeQuery, freeOrPaidQuery] })
         .skip((currentPage - 1) * perPage)
         .populate("comments", "text created")
         .populate("comments.postedBy", "_id name")

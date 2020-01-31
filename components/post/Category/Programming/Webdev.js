@@ -15,7 +15,7 @@ export default function Webdev() {
             <div className="column">
               <div className="tile is-ancestor">
                 <div className="tile is-parent">
-                  <Link href="/python">
+                  <Link href="/courses/python">
                     <article className="tile is-child box notification is-white is-flex">
                       <div className="topic-container">
                         <img
