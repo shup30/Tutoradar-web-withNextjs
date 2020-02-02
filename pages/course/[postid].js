@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/layout";
-import SinglePost from "../../components/post/singlePost";
+import SinglePost from "../../components/post/SinglePost";
 
 Post.getInitialProps = async ctx => {
   const PostId = ctx.query.postid;
