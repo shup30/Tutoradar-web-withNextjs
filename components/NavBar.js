@@ -111,7 +111,7 @@ class NavBar extends React.Component {
               </div>
               {isAuthenticated() && (
                 <span className="navbar-item">
-                  <Link href="/post/create">
+                  <Link href="/course/create">
                     <button className="button is-white is-outlined is-small">
                       <strong>Upload A Resource</strong>
                     </button>
