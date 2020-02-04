@@ -72,7 +72,7 @@ export default class Landing extends Component {
                         <Link href="/web-development">
                           <LazyLoad height={200}>
                             <img
-                              src="/assets/images/development-web.png"
+                              src="/assets/images/web-development.jpg"
                               alt="Park Savoy"
                               className="is-slightly-rounded"
                               width="100"
@@ -89,7 +89,7 @@ export default class Landing extends Component {
                             <Link href="/web-development">
                               <a> Web Development</a>
                             </Link>
-                          </span>
+                          </span> 
                         </p>
                       </div>
                     </div>
