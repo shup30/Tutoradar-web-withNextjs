@@ -64,14 +64,15 @@ class NavBar extends React.Component {
                   <a>Categories</a>
                 </Link>
               </span>
+
               <span className="navbar-item">
-                <Link href="/topics">
-                  <a>Tutorials</a>
+                <Link href={`/articles/`}>
+                  <a>{`Articles`}</a>
                 </Link>
               </span>
               <span className="navbar-item">
-                <Link href={`/blog/`}>
-                  <a>{`Blog`}</a>
+                <Link href="/topics">
+                  <a>About</a>
                 </Link>
               </span>
 
@@ -109,15 +110,6 @@ class NavBar extends React.Component {
                   </span>
                 </div>
               </div>
-              {isAuthenticated() && (
-                <span className="navbar-item">
-                  <Link href="/course/create">
-                    <button className="button is-white is-outlined is-small">
-                      <strong>Upload A Resource</strong>
-                    </button>
-                  </Link>
-                </span>
-              )}
             </div>
 
             <div className="navbar-end">
@@ -143,13 +135,20 @@ class NavBar extends React.Component {
                 {isAuthenticated() && (
                   <React.Fragment>
                     <div className="buttons">
-                      <span className="button is-link is-outlined is-small">
+                      <span className="navbar-item">
+                        <Link href="/course/create">
+                          <button className="button is-info is-rounded is-small">
+                            <strong>Upload Resource</strong>
+                          </button>
+                        </Link>
+                      </span>
+                      <span className="button is-info is-rounded is-small">
                         <Link href={`/user/${isAuthenticated().user._id}`}>
                           <span> View Profile</span>
                         </Link>
                       </span>
                       <span
-                        className="button is-link is-outlined is-small"
+                        className="button is-link is-outlined"
                         onClick={() => signout(() => redirectToHome())}
                       >
                         Sign Out

@@ -75,6 +75,11 @@ class RenderPost extends Component {
                               {post.freeOrPaid}
                             </span>
                           </a>
+                          <a className="level-item">
+                            <span className="tag is-white">
+                              {post.source}
+                            </span>
+                          </a>
                         </div>
                       </nav>
                     </div>

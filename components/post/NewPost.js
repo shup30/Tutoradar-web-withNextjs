@@ -11,6 +11,8 @@ class NewPost extends Component {
       title: "",
       body: "",
       url: "",
+      source: "",
+      slug: "",
       category: "",
       subcategory: "",
       postType: "",
@@ -79,7 +81,9 @@ class NewPost extends Component {
             loading: false,
             title: "",
             body: "",
+            source: "",
             url: "",
+            slug: "",
             category: "Web Development",
             subcategory: "",
             postType: "",
@@ -91,11 +95,22 @@ class NewPost extends Component {
     }
   };
 
-  newPostForm = (title, body, url) => (
+  newPostForm = (title, body, url, source, slug) => (
     <form id="postform">
       <div className="field" style={{ textAlign: "center" }}>
         <h1 className="title is-2 is-capitalized">Create a new Resource</h1>
-        <label className="label">URL</label>
+        <label className="label">Title</label>
+        <input
+          onChange={this.handleChange("title")}
+          type="text"
+          placeholder="Type a Title for Resource"
+          className="input"
+          value={title}
+        />
+      </div>
+
+      <div className="field" style={{ textAlign: "center" }}>
+        <label className="label">Url</label>
         <input
           onChange={this.handleChange("url")}
           type="text"
@@ -106,13 +121,13 @@ class NewPost extends Component {
       </div>
 
       <div className="field" style={{ textAlign: "center" }}>
-        <label className="label">Resource Title</label>
+        <label className="label">Source</label>
         <input
-          onChange={this.handleChange("title")}
+          onChange={this.handleChange("source")}
           type="text"
-          placeholder="Type a Title for Resource"
           className="input"
-          value={title}
+          value={source}
+          placeholder="Url Link for resource"
         />
       </div>
 
@@ -127,6 +142,18 @@ class NewPost extends Component {
           value={body}
         />
       </div>
+
+      <div className="field" style={{ textAlign: "center" }}>
+        <label className="label">Slug</label>
+        <input
+          onChange={this.handleChange("slug")}
+          type="text"
+          className="input"
+          value={slug}
+          placeholder="slug"
+        />
+      </div>
+
 
       <br />
 
@@ -308,6 +335,8 @@ class NewPost extends Component {
     const {
       title,
       body,
+      source,
+      slug,
       category,
       subcategory,
       postType,
@@ -350,6 +379,8 @@ class NewPost extends Component {
               title,
               body,
               url,
+              source,
+              slug,
               category,
               subcategory,
               photo,

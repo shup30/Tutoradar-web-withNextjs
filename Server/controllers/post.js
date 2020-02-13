@@ -67,7 +67,7 @@ exports.getPosts_programming = async (req, res) => {
         .populate("comments", "text created")
         .populate("comments.postedBy", "_id name")
         .populate("postedBy", "_id name")
-        .select("_id title body created category subcategory postType likes freeOrPaid url")
+        .select("_id title body created category subcategory postType likes freeOrPaid url slug source")
         .limit(perPage)
         .sort({ created: -1 });
     })
@@ -102,7 +102,7 @@ exports.getPosts = async (req, res) => {
         .populate("comments", "text created")
         .populate("comments.postedBy", "_id name")
         .populate("postedBy", "_id name")
-        .select("_id title body created category subcategory postType likes freeOrPaid url")
+        .select("_id title body created category subcategory postType likes freeOrPaid url slug source")
         .limit(perPage)
         .sort({ created: -1 });
     })

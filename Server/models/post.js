@@ -13,6 +13,12 @@ const postSchema = new mongoose.Schema({
   url: {
     type: String
   },
+  source: {
+    type: String
+  },
+  slug: {
+    type: String
+  },
   photo: {
     data: Buffer,
     contenType: String
