@@ -5,8 +5,8 @@ import { FaUpload } from "react-icons/fa";
 import Router from "next/router";
 
 class NewPost extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: "",
       body: "",
@@ -25,6 +25,12 @@ class NewPost extends Component {
       redirectToProfile: false
     };
   }
+
+  onContentStateChange = function(contentState) {
+    this.setState({
+      contentState
+    });
+  };
 
   componentDidMount() {
     this.postData = new FormData();
@@ -135,11 +141,12 @@ class NewPost extends Component {
 
       <div className="field" style={{ textAlign: "center" }}>
         <label className="label">Description</label>
-        <textarea
+        <input
           onChange={this.handleChange("body")}
           type="text"
-          className="textarea is-large"
+          className="input"
           value={body}
+          placeholder="Description"
         />
       </div>
 
@@ -153,7 +160,6 @@ class NewPost extends Component {
           placeholder="slug"
         />
       </div>
-
 
       <br />
 
