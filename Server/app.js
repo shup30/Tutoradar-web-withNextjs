@@ -15,7 +15,7 @@ dotenv.config();
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: false
+    useUnifiedTopology: true
   })
   .then(() => console.log("db connected"));
 
@@ -48,6 +48,7 @@ app.use(cors());
 app.use("/api", postRoutes);
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
+app.use('/sitemap', express.static(path.join(__dirname, 'sitemap.xml')))
 app.use(function(err, req, res, next) {
   if (err.name === "UnauthorizedError") {
     res.status(401).json({ Error: "Unauthorised user" });

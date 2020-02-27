@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.tutoradar.com/</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/articles/</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/web-development</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/app-development</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/articles/tags/</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/articles/nodejs-tutorial-creating-a-simple-server/</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/articles/author/shubham/</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/articles/best-free-video-tutorials-to-learn-css-in-2019/</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/articles/best-tutorials-and-courses-to-learn-python-udemy/</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/articles/installing-linux/</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/articles/tag/nodejs/</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/articles/tag/python/</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.tutoradar.com/articles/tag/linux/</loc>
+  <lastmod>2020-02-27T09:55:19+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
