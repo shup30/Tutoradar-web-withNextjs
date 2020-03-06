@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Patua+One&display=swap");
-
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One&display=swap');
 $yellow: #fcf594;
 $buscuit: #e1fff6;
 $gray: rgb(255, 255, 255);
@@ -22,9 +22,9 @@ $violet-text: rgb(197, 183, 204);
 
 .title {
   color: #000000;
-  font-size: 2rem;
-  font-weight: 600;
-  font-family: "Patua One", cursive;
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-family: 'Sigmar One', cursive;
   text-align: center;
 }
 
@@ -59,7 +59,7 @@ body {
   color: rgb(255, 255, 255);
   font-size: 2rem;
   font-weight: 600;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Sigmar One', cursive;
   text-align: center;
 }
 

@@ -27,14 +27,8 @@ export default ({ children }) => {
       <footer className="footer">
         <div className="content has-text-centered">
           <p>
-            Developed by <a href="https://tutoradar.com">S. Patil</a>. The
-            source code is licensed by
-            <a href="http://opensource.org/licenses/mit-license.php"> MIT</a>.
-            The website content is licensed{" "}
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-              CC BY NC SA 4.0
-            </a>
-            .
+            Copyright © 2020 Tutoradar, All rights Reserved |&nbsp;&nbsp;&nbsp;Developed By{" "}
+            <a href="http://www.github.com/shup30">Shubham Patil</a>.
           </p>
         </div>
       </footer>

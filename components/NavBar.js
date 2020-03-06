@@ -60,18 +60,12 @@ class NavBar extends React.Component {
               </span>
 
               <span className="navbar-item">
-                <Link href="/categories">
-                  <a>Categories</a>
-                </Link>
-              </span>
-
-              <span className="navbar-item">
                 <Link href={`/articles/`}>
                   <a>{`Articles`}</a>
                 </Link>
               </span>
               <span className="navbar-item">
-                <Link href="/topics">
+                <Link href="/about">
                   <a>About</a>
                 </Link>
               </span>

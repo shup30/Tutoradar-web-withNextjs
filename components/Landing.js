@@ -46,7 +46,7 @@ export default class Landing extends Component {
     return (
       <div className="container">
         <section className="section" id="course-carousel">
-          <div className="tile is-ancestor">
+          <div className="tile is-ancestor is-capitalized">
             <div className="tile is-vertical is-6">
               <div className="tile">
                 <div className="tile is-parent is-vertical">
