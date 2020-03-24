@@ -72,7 +72,7 @@ export default class Landing extends Component {
                         <Link href="/web-development">
                           <LazyLoad height={200}>
                             <img
-                              src="/assets/images/web-development.jpg"
+                              src="/assets/images/Web-Development.jpg"
                               alt="Park Savoy"
                               className="is-slightly-rounded"
                               width="100"
@@ -135,7 +135,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/data-science">
                           <LazyLoad height={200}>
                             <img
                               src="/assets/images/Data-Science.jpg"
@@ -152,7 +152,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/data-science">
                               <a> Data Science </a>
                             </Link>
                           </span>
@@ -168,7 +168,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/software-engineering">
                           <LazyLoad height={200}>
                             <img
                               src="/assets/images/Software-Testing.jpg"
@@ -185,7 +185,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/software-engineering">
                               <a>Software Engineering </a>
                             </Link>
                           </span>
@@ -201,7 +201,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/game-development">
                           <LazyLoad height={200}>
                             <img
                               src="/assets/images/Game-dev.png"
@@ -218,7 +218,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/game-development">
                               <a> Game Development </a>
                             </Link>
                           </span>
@@ -234,7 +234,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/software-testing">
                           <LazyLoad height={200}>
                             <img
                               src="/assets/images/Software-Testing.jpg"
@@ -251,7 +251,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/software-testing">
                               <a>Software Testing </a>
                             </Link>
                           </span>
@@ -294,7 +294,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/app-development">
+                        <Link href="/graphic-design">
                           <LazyLoad height={200}>
                             <img
                               src="/assets/images/Graphic-design-tools.jpg"
@@ -311,7 +311,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/app-development">
+                            <Link href="/graphic-design">
                               <a>Graphic Design</a>
                             </Link>
                           </span>
@@ -327,7 +327,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/data-science">
                           <LazyLoad height={200}>
                             <img
                               src="/assets/images/ux.jpg"
@@ -344,7 +344,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/user-experience">
                               <a> User Experience </a>
                             </Link>
                           </span>
@@ -360,7 +360,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/game-design">
                           <LazyLoad height={200}>
                             <img
                               src="/assets/images/game-design.jpg"
@@ -377,7 +377,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/game-design">
                               <a>Game Design </a>
                             </Link>
                           </span>
@@ -393,7 +393,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/design-thinking">
                           <LazyLoad height={200}>
                             <img
                               src="/assets/images/design-thinking.jpg"
@@ -410,7 +410,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/design-thinking">
                               <a> Design Thinking </a>
                             </Link>
                           </span>
@@ -426,7 +426,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/3d-animation">
                           <LazyLoad height={200}>
                             <img
                               src="/assets/images/3d-animation.jpg"
@@ -443,7 +443,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/3d-animation">
                               <a>3D and Animation </a>
                             </Link>
                           </span>
@@ -459,7 +459,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/fashion-designing">
                           <LazyLoad height={200}>
                             <img
                               src="/assets/images/fashion-design.jpg"
@@ -476,7 +476,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/fashion-designing">
                               <a> Fashion Designing</a>
                             </Link>
                           </span>
@@ -495,9 +495,9 @@ export default class Landing extends Component {
               <div className="tile">
                 <div className="tile is-parent is-vertical">
                   <article className="tile is-child notification is-warning">
-                    <p className="title">Buisness Tutorials</p>
+                    <p className="title">Business Tutorials</p>
                     <p className="subtitle">
-                      Find the best Buisness Tutorials from community driven
+                      Find the best Business Tutorials from community driven
                       sources
                     </p>
                   </article>
@@ -528,7 +528,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/web-development">
+                            <Link href="/entrepreneurship">
                               <a> Entrepreneurship</a>
                             </Link>
                           </span>
@@ -544,7 +544,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/app-development">
+                        <Link href="/communications">
                           <img
                             src="/assets/images/Software-Testing.jpg"
                             alt="Mobile App"
@@ -559,7 +559,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/app-development">
+                            <Link href="/communications">
                               <a> Communications </a>
                             </Link>
                           </span>
@@ -575,7 +575,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/management">
                           <img
                             src="/assets/images/Data-Science.jpg"
                             alt="Data Science"
@@ -590,7 +590,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/management">
                               <a> Management </a>
                             </Link>
                           </span>
@@ -606,7 +606,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/sales">
                           <img
                             src="/assets/images/Software-Testing.jpg"
                             alt="Park Savoy"
@@ -621,7 +621,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/sales">
                               <a>Sales </a>
                             </Link>
                           </span>
@@ -637,7 +637,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/strategy">
                           <img
                             src="/assets/images/Data-Science2.jpg"
                             alt="Park Savoy"
@@ -652,7 +652,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/strategy">
                               <a> Strategy </a>
                             </Link>
                           </span>
@@ -668,7 +668,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/operations">
                           <img
                             src="/assets/images/Software-Testing.jpg"
                             alt="Park Savoy"
@@ -683,7 +683,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/operations">
                               <a>Operations </a>
                             </Link>
                           </span>
@@ -699,7 +699,7 @@ export default class Landing extends Component {
                   <div className="card is-slightly-rounded">
                     <div className="card-image">
                       <figure className="image">
-                        <Link href="/">
+                        <Link href="/project-management">
                           <img
                             src="/assets/images/Data-Science.jpg"
                             alt="Park Savoy"
@@ -714,7 +714,7 @@ export default class Landing extends Component {
                       <div className="content">
                         <p>
                           <span className="title is-6 is-capitalized">
-                            <Link href="/">
+                            <Link href="/project-management">
                               <a> Project Management </a>
                             </Link>
                           </span>

@@ -41,27 +41,27 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <Link href="designing">
+                <Link href="/designing">
                   <a>Designing</a>
                 </Link>
               </li>
               <li>
-                <Link href="engineering">
+                <Link href="/engineering">
                   <a>Engineering</a>
                 </Link>
               </li>
               <li>
-                <Link href="Buisness">
-                  <a>Buisness</a>
+                <Link href="/business">
+                  <a>Business</a>
                 </Link>
               </li>
               <li>
-                <Link href="Finance">
+                <Link href="/finance">
                   <a>Finance</a>
                 </Link>
               </li>
               <li>
-                <Link href="Office">
+                <Link href="/office">
                   <a>Office</a>
                 </Link>
               </li>

@@ -1,141 +1,123 @@
 import React from "react";
 import Link from "next/link";
 
-export default function mobileApp() {
+export default function softwareTesting() {
   return (
     <section className="section">
       <div className="container">
         <div className="columns">
           <div className="column">
-            <h1 className="title is-1">Mobile App Development Topics</h1>
+            <h1 className="title is-1"> Software Testing Topics</h1>
           </div>
         </div>
         <div className="columns">
           <div className="column">
             <div className="column">
               <div className="tile is-ancestor">
-                  <div className="tile is-parent">
-                    <article className="tile is-child box notification is-white">
+                <div className="tile is-parent">
+                  <article className="tile is-child box notification is-white">
                     <Link href="/kotlin">
-                      <p className="title">Android Development</p>
-                      </Link>
+                      <p className="title">Selenium WebDriver</p>
+                    </Link>
+                  </article>
+                </div>
 
-                    </article>
-                  </div>
-
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Javascript</p>
+                    <p className="title">Software Testing</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">React</p>
+                    <p className="title">Automation Testing</p>
                   </article>
                 </div>
               </div>
               <div className="tile is-ancestor">
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Vue</p>
+                    <p className="title">REST Assured</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Angular</p>
+                    <p className="title">Applum</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Svelte</p>
+                    <p className="title">Java</p>
                   </article>
                 </div>
               </div>
               <div className="tile is-ancestor">
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">React Native</p>
+                    <p className="title">Selenium Testing Framework</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Mobile Development</p>
+                    <p className="title">API Testing</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Ionic</p>
+                    <p className="title">Automation</p>
                   </article>
                 </div>
               </div>
               <div className="tile is-ancestor">
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Google Flutter</p>
+                    <p className="title">Python</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Swift</p>
+                    <p className="title">Cypress.io</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Dart Programming Language</p>
+                    <p className="title">Performance Testing</p>
                   </article>
                 </div>
               </div>
               <div className="tile is-ancestor">
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Kotlin</p>
+                    <p className="title">REST API</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Redux Framework</p>
+                    <p className="title">Unit Testing</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Xamarin</p>
+                    <p className="title">Quality Assurance</p>
                   </article>
                 </div>
-                </div>
-                <div className="tile is-ancestor">
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Swift UI</p>
-                  </article>
-                </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Firebase</p>
-                  </article>
-                </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">C#</p>
-                  </article>
-                </div>
-                </div>
+              </div>
               <div className="tile is-ancestor">
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">App Development</p>
-                  </article>
-                </div>
-                              <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Augmented Reality</p>
+                    <p className="title">SoapUI</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Android Studio</p>
+                    <p className="title">JMeter</p>
                   </article>
                 </div>
+                <div className="tile is-parent">
+                  <article className="tile is-child box notification is-white">
+                    <p className="title">JUnit</p>
+                  </article>
                 </div>
+              </div>
             </div>
           </div>
         </div>

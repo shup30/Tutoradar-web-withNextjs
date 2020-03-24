@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
 
-export default function mobileApp() {
+export default function dataScience() {
   return (
     <section className="section">
       <div className="container">
         <div className="columns">
           <div className="column">
-            <h1 className="title is-1">Mobile App Development Topics</h1>
+            <h1 className="title is-1">Data Science Topics</h1>
           </div>
         </div>
         <div className="columns">
@@ -16,126 +16,119 @@ export default function mobileApp() {
               <div className="tile is-ancestor">
                   <div className="tile is-parent">
                     <article className="tile is-child box notification is-white">
-                    <Link href="/kotlin">
-                      <p className="title">Android Development</p>
+                    <Link href="/data-science">
+                      <p className="title">Data Science</p>
                       </Link>
-
                     </article>
                   </div>
-
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Javascript</p>
+                    <p className="title">Python</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">React</p>
-                  </article>
-                </div>
-              </div>
-              <div className="tile is-ancestor">
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Vue</p>
-                  </article>
-                </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Angular</p>
-                  </article>
-                </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Svelte</p>
+                    <p className="title">Machine Learning</p>
                   </article>
                 </div>
               </div>
               <div className="tile is-ancestor">
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">React Native</p>
+                    <p className="title">Deep Learning</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Mobile Development</p>
+                    <p className="title">R</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Ionic</p>
-                  </article>
-                </div>
-              </div>
-              <div className="tile is-ancestor">
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Google Flutter</p>
-                  </article>
-                </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Swift</p>
-                  </article>
-                </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Dart Programming Language</p>
+                    <p className="title">Neural Networks</p>
                   </article>
                 </div>
               </div>
               <div className="tile is-ancestor">
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Kotlin</p>
+                    <p className="title">Python</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Redux Framework</p>
+                    <p className="title">Data Analysis</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Xamarin</p>
+                    <p className="title">Artificial Intelligence</p>
+                  </article>
+                </div>
+              </div>
+              <div className="tile is-ancestor">
+                <div className="tile is-parent">
+                  <article className="tile is-child box notification is-white">
+                    <p className="title">Tenserflow</p>
+                  </article>
+                </div>
+                <div className="tile is-parent">
+                  <article className="tile is-child box notification is-white">
+                    <p className="title">Neural Networks</p>
+                  </article>
+                </div>
+                <div className="tile is-parent">
+                  <article className="tile is-child box notification is-white">
+                    <p className="title">Natural Language Processing</p>
+                  </article>
+                </div>
+              </div>
+              <div className="tile is-ancestor">
+                <div className="tile is-parent">
+                  <article className="tile is-child box notification is-white">
+                    <p className="title">Statistics</p>
+                  </article>
+                </div>
+                <div className="tile is-parent">
+                  <article className="tile is-child box notification is-white">
+                    <p className="title">Apache Spark</p>
+                  </article>
+                </div>
+                <div className="tile is-parent">
+                  <article className="tile is-child box notification is-white">
+                    <p className="title">Buisness Analytics</p>
                   </article>
                 </div>
                 </div>
                 <div className="tile is-ancestor">
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Swift UI</p>
+                    <p className="title">Big Data</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Firebase</p>
+                    <p className="title">Reinforcement Learning</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">C#</p>
+                    <p className="title">Computer Vision</p>
                   </article>
                 </div>
                 </div>
               <div className="tile is-ancestor">
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">App Development</p>
-                  </article>
-                </div>
-                              <div className="tile is-parent">
-                  <article className="tile is-child box notification is-white">
-                    <p className="title">Augmented Reality</p>
+                    <p className="title">Scala</p>
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child box notification is-white">
-                    <p className="title">Android Studio</p>
+                    <p className="title">PyTorch</p>
                   </article>
                 </div>
-                </div>
+              </div>
             </div>
           </div>
         </div>
