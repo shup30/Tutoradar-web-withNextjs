@@ -3,6 +3,26 @@ import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 
 export default function Home() {
+  function togglefunction() {
+   var toggle = document.querySelector("#myUL").classList.toggle("is-hidden");
+  }
+  
+  function myFunction() {
+    var input, filter, ul, li, a, i, txtValue, toggle; 
+    input = document.getElementById("searchbar");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
   return (
     <div>
       <section className="section1">
@@ -17,10 +37,38 @@ export default function Home() {
     dium is-clearfix"
               >
                 <input
+                  id="searchbar"
+                  onKeyUp={myFunction}
+                  onInput={togglefunction}
                   className="input is-warning is-small"
                   type="text"
                   placeholder="Search tutorials"
                 />
+                <ul className="is-hidden" id="myUL">
+                  <li>
+                    <a href="programming-courses/python">Python</a>
+                  </li>
+                  <li>
+                    <a href="javascript">Javascript</a>
+                  </li>
+
+                  <li>
+                    <a href="/billy">React</a>
+                  </li>
+                  <li>
+                    <a href="/bob">Vue</a>
+                  </li>
+
+                  <li>
+                    <a href="/calvin">CSS</a>
+                  </li>
+                  <li>
+                    <a href="/christina">Angular</a>
+                  </li>
+                  <li>
+                    <a href="/cindy">Php</a>
+                  </li>
+                </ul>
                 <span className="icon is-left">
                   <FaSearch />
                 </span>
