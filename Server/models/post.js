@@ -1,50 +1,50 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema;
+const URLSlugs = require("mongoose-url-slugs");
 
 const postSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    default: "",
+    trim: true,
   },
   body: {
     type: String,
-    required: true
+    required: true,
   },
   url: {
-    type: String
+    type: String,
   },
   source: {
-    type: String
-  },
-  slug: {
-    type: String
+    type: String,
   },
   photo: {
     data: Buffer,
-    contenType: String
+    contenType: String,
   },
   postedBy: {
     type: ObjectId,
-    ref: "User"
+    ref: "User",
   },
   category: {
     type: String,
-    required: true
+    required: true,
   },
   subcategory: {
-    type: String
+    type: String,
   },
   postType: {
     type: String,
-    required: true
+    required: true,
   },
   freeOrPaid: {
     type: String,
-    required: true
+    required: true,
   },
   created: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updated: Date,
   likes: [{ type: ObjectId, ref: "User" }],
@@ -52,9 +52,11 @@ const postSchema = new mongoose.Schema({
     {
       text: String,
       created: { type: Date, default: Date.now },
-      postedBy: { type: ObjectId, ref: "User" }
-    }
-  ]
+      postedBy: { type: ObjectId, ref: "User" },
+    },
+  ],
 });
+
+postSchema.plugin(URLSlugs("title", { field: "myslug" }));
 
 module.exports = mongoose.model("Post", postSchema);

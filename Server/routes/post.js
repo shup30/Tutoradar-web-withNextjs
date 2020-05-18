@@ -5,6 +5,7 @@ const {
   createPost,
   postsByUser,
   postById,
+  postBySlug,
   isPoster,
   updatePost,
   deletePost,
@@ -42,9 +43,9 @@ router.post(
   createPostValidator
 );
 router.get("/posts/by/:userId", requireSignin, postsByUser);
-router.get("/post/:postId", singlePost);
-router.put("/post/:postId", requireSignin, isPoster, updatePost);
-router.delete("/post/:postId", requireSignin, isPoster, deletePost);
+router.get("/post/:slug", singlePost);
+router.put("/post/:slug", requireSignin, isPoster, updatePost);
+router.delete("/post/:slug", requireSignin, isPoster, deletePost);
 // photo
 router.get("/post/photo/:postId", photo);
 
@@ -52,5 +53,7 @@ router.get("/post/photo/:postId", photo);
 router.param("userId", userById);
 // any route containing :postId, our app will first execute postById()
 router.param("postId", postById);
+router.param("slug", postBySlug);
+
 
 module.exports = router;

@@ -29,6 +29,7 @@
     "lodash": "^4.17.15",
     "mongodb": "^3.3.3",
     "mongoose": "^5.7.7",
+    "mongoose-url-slugs": "^1.0.2",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.4",
     "uuid": "^3.3.3"

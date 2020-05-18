@@ -73,6 +73,10 @@ export default class Signin extends Component {
           Submit
         </button>
       </div>
+      <div className="field is-right">
+        <hr/>
+        Not Registered User? Please <a href="/signup">Sign Up!</a>
+      </div>
     </form>
   );
 

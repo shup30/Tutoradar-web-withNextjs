@@ -15,7 +15,7 @@ class SinglePost extends Component {
       redirectToSignin: false,
       like: false,
       likes: 0,
-      comments: []
+      comments: [],
     };
   }
 
@@ -31,15 +31,15 @@ class SinglePost extends Component {
   //   return { postid };
   // }
 
-  checkLike = likes => {
+  checkLike = (likes) => {
     const userId = isAuthenticated() && isAuthenticated().user._id;
     let match = likes.indexOf(userId) !== -1;
     return match;
   };
 
   componentDidMount() {
-    const postId = this.props.PostId;
-    singlePost(postId).then(data => {
+    const postId = this.props.Slug;
+    singlePost(postId).then((data) => {
       if (data.error) {
         console.log(data.error);
       } else {
@@ -47,13 +47,13 @@ class SinglePost extends Component {
           post: data,
           likes: data.likes.length,
           like: this.checkLike(data.likes),
-          comments: data.comments
+          comments: data.comments,
         });
       }
     });
   }
 
-  updateComments = comments => {
+  updateComments = (comments) => {
     this.setState({ comments });
   };
 
@@ -67,13 +67,13 @@ class SinglePost extends Component {
     const postId = this.state.post._id;
     const token = isAuthenticated().token;
 
-    callApi(userId, token, postId).then(data => {
+    callApi(userId, token, postId).then((data) => {
       if (data.error) {
         console.log(data.error);
       } else {
         this.setState({
           like: !this.state.like,
-          likes: data.likes.length
+          likes: data.likes.length,
         });
       }
     });
@@ -82,7 +82,7 @@ class SinglePost extends Component {
   deletePost = () => {
     const postId = this.props.quota;
     const token = isAuthenticated().token;
-    remove(postId, token).then(data => {
+    remove(postId, token).then((data) => {
       if (data.error) {
         console.log(data.error);
       } else {
@@ -98,7 +98,7 @@ class SinglePost extends Component {
     }
   };
 
-  renderPost = post => {
+  renderPost = (post) => {
     console.log(post);
     const posterId = post.postedBy ? `/user/${post.postedBy._id}` : "";
     const posterName = post.postedBy ? post.postedBy.name : " Unknown";
@@ -106,72 +106,82 @@ class SinglePost extends Component {
     const { like, likes, comments } = this.state;
 
     return (
-      <div className="column">
-        <img
-          src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
-          alt={post.title}
-          onError={i => (i.target.src = `${DefaultPost}`)}
-          className="img-thumbnail"
-          style={{
-            height: "300px",
-            width: "100%",
-            objectFit: "cover"
-          }}
-        />
-        &nbsp;
-        <span id="like-button" onClick={this.likeToggle}>
-          <i className="far fa-thumbs-up text-success bg-dark" />
-          {likes} Like
-        </span>
-        &nbsp;
-        <span className="button is-primary" onClick={() => Router.back()}>
-          <strong> Back to posts </strong>
-        </span>
-        &nbsp;
-        {isAuthenticated().user &&
-          isAuthenticated().user._id === post.postedBy._id && (
-            <>
-              <span className="button is-warning">
-                <Link href={`/post/edit/${post._id}`}>
-                  <strong> Update Post </strong>
-                </Link>
-              </span>
-              &nbsp;
-              <button
-                onClick={this.deleteConfirmed}
-                className="button is-danger"
-              >
-                Delete Post
-              </button>
-            </>
-          )}
-        <div>
-          {isAuthenticated().user && isAuthenticated().user.role === "admin" && (
-            <div class="column">
-              <div className="columns">
-                <h5 className="column">Admin</h5>
-                <p>Edit/Delete as an Admin</p>
+      <div className="columns">
+        <div className="column is-8">
+          <div className="course-detail-main">
+            <img
+              src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
+              alt={post.title}
+              onError={(i) => (i.target.src = `${DefaultPost}`)}
+              className="img-thumbnail"
+              style={{
+                height: "300px",
+                width: "100%",
+                objectFit: "cover",
+              }}
+            />
+            <div className="header-des">
+              <strong>{post.title}</strong>
+            </div>
+          </div>
+          &nbsp;
+          <span id="like-button" onClick={this.likeToggle}>
+            <i className="far fa-thumbs-up text-success bg-dark" />
+            {likes} Like
+          </span>
+          &nbsp;
+          <span className="button is-primary" onClick={() => Router.back()}>
+            <strong> Back to posts </strong>
+          </span>
+          &nbsp;
+          {isAuthenticated().user &&
+            isAuthenticated().user._id === post.postedBy._id && (
+              <>
                 <span className="button is-warning">
                   <Link href={`/post/edit/${post._id}`}>
-                    <a> Update Post </a>
+                    <strong> Update Post </strong>
                   </Link>
                 </span>
                 &nbsp;
                 <button
                   onClick={this.deleteConfirmed}
-                  className="button is-raised is-danger"
+                  className="button is-danger"
                 >
                   Delete Post
                 </button>
+              </>
+            )}
+          <div>
+            {isAuthenticated().user && isAuthenticated().user.role === "admin" && (
+              <div class="column">
+                <div className="columns">
+                  <h5 className="column">Admin</h5>
+                  <p>Edit/Delete as an Admin</p>
+                  <span className="button is-warning">
+                    <Link href={`/post/edit/${post._id}`}>
+                      <a> Update Post </a>
+                    </Link>
+                  </span>
+                  &nbsp;
+                  <button
+                    onClick={this.deleteConfirmed}
+                    className="button is-raised is-danger"
+                  >
+                    Delete Post
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
+          <div>
+            <h4 className="raw"> Description: </h4>
+            <p className="column">{post.body}</p>
+          </div>
+          <br />
         </div>
-        <div>
-          <h4 className="raw"> Description: </h4>
-          <p className="column">{post.body}</p>
+        <div className="column">
+          <p> Description </p>
         </div>
-        <br />
       </div>
     );
   };
@@ -179,17 +189,17 @@ class SinglePost extends Component {
   render() {
     console.log(
       "Render Quota:",
-      this.props.postId,
+      this.props.slug,
       this.props.router.query.postid,
       this.props.quota
     );
     console.log("initial Props Quota:", this.props);
-    const { postId } = this.props;
+    const { slug } = this.props;
     const {
       post,
       redirectToHome,
       redirectToSignin,
-      redirectToBack
+      redirectToBack,
     } = this.state;
 
     if (redirectToHome) {
@@ -203,7 +213,6 @@ class SinglePost extends Component {
       <section className="section">
         <div className="container">
           <h2 className="title">{post.title}</h2>
-
           {!post ? (
             <div className="hero">
               <h2>Loading...</h2>

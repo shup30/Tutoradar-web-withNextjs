@@ -5,20 +5,19 @@ import Likeup from "./likeup";
 import Router from "next/router";
 import LazyLoad from "react-lazyload";
 
-
 class RenderPost extends Component {
   constructor() {
     super();
     this.state = {
       redirectToHome: false,
-      redirectToSignin: false
+      redirectToSignin: false,
     };
   }
 
   render() {
     return (
       <div>
-        {this.props.postz.map(post => {
+        {this.props.postz.map((post) => {
           const posterId = post.postedBy ? `/user/${post.postedBy._id}` : "";
           const posterName = post.postedBy ? post.postedBy.name : "Unknown";
 
@@ -35,7 +34,7 @@ class RenderPost extends Component {
                           <img
                             src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
                             alt={post.title}
-                            onError={i => (i.target.src = `${DefaultPost}`)}
+                            onError={(i) => (i.target.src = `${DefaultPost}`)}
                             className="img-thunbnail"
                           />
                         </LazyLoad>
@@ -46,16 +45,19 @@ class RenderPost extends Component {
                         <p>
                           <a href={`${post.url}`}>
                             <span className="title is-5 is-capitalized">
-                              {post.title}
+                              {post.title} 
                             </span>
                           </a>
                           &nbsp;&nbsp;
-                          <Link href="/course/[postid]" as={`/course/${post._id}`}>
+                          <Link
+                            href="/course/[slug]"
+                            as={`/course/${post.myslug}`}
+                          >
                             <button className="button is-info is-small is-rounded is-outlined">
                               View Details
                             </button>
                           </Link>
-                          <br />
+                          <br/>
                         </p>
                       </div>
                       <nav className="level is-mobile">
@@ -76,9 +78,7 @@ class RenderPost extends Component {
                             </span>
                           </a>
                           <a className="level-item">
-                            <span className="tag is-white">
-                              {post.source}
-                            </span>
+                            <span className="tag is-white">{post.source}</span>
                           </a>
                         </div>
                       </nav>

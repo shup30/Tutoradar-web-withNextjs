@@ -17,31 +17,31 @@ export default class Landing extends Component {
           breakpoint: 5000,
           settings: {
             slidesToShow: 5,
-            slidesToScroll: 2
-          }
+            slidesToScroll: 2,
+          },
         },
         {
           breakpoint: 1600,
           settings: {
             slidesToShow: 5,
-            slidesToScroll: 2
-          }
+            slidesToScroll: 2,
+          },
         },
         {
           breakpoint: 1200,
           settings: {
             slidesToShow: 3,
-            slidesToScroll: 1
-          }
+            slidesToScroll: 1,
+          },
         },
         {
           breakpoint: 800,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
+            slidesToScroll: 1,
+          },
+        },
+      ],
     };
     return (
       <div className="container">
@@ -89,7 +89,7 @@ export default class Landing extends Component {
                             <Link href="/web-development">
                               <a> Web Development</a>
                             </Link>
-                          </span> 
+                          </span>
                         </p>
                       </div>
                     </div>

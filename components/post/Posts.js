@@ -33,7 +33,7 @@ class Posts extends Component {
       this.state.fop,
       this.state.ptq
     );
-    console.log("title:", this.state.title);
+    console.log("all props", this.props);
   }
 
   loadMore = number => {

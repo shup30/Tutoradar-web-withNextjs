@@ -12,7 +12,6 @@ class NewPost extends Component {
       body: "",
       url: "",
       source: "",
-      slug: "",
       category: "",
       subcategory: "",
       postType: "",
@@ -22,13 +21,13 @@ class NewPost extends Component {
       user: {},
       fileSize: 0,
       loading: false,
-      redirectToProfile: false
+      redirectToProfile: false,
     };
   }
 
-  onContentStateChange = function(contentState) {
+  onContentStateChange = function (contentState) {
     this.setState({
-      contentState
+      contentState,
     });
   };
 
@@ -42,7 +41,7 @@ class NewPost extends Component {
     if (fileSize > 100000) {
       this.setState({
         error: "File size should be less than 100kb",
-        loading: false
+        loading: false,
       });
       return false;
     }
@@ -57,14 +56,14 @@ class NewPost extends Component {
     ) {
       this.setState({
         error: "A valid Url is required",
-        loading: false
+        loading: false,
       });
       return false;
     }
     return true;
   };
 
-  handleChange = name => event => {
+  handleChange = (name) => (event) => {
     this.setState({ error: "" });
     const value = name === "photo" ? event.target.files[0] : event.target.value;
     const fileSize = name === "photo" ? event.target.files[0].size : 0;
@@ -72,7 +71,7 @@ class NewPost extends Component {
     this.setState({ [name]: value, fileSize });
   };
 
-  clickSubmit = event => {
+  clickSubmit = (event) => {
     event.preventDefault();
     this.setState({ loading: true });
 
@@ -80,7 +79,7 @@ class NewPost extends Component {
       const userId = isAuthenticated().user._id;
       const token = isAuthenticated().token;
 
-      create(userId, token, this.postData).then(data => {
+      create(userId, token, this.postData).then((data) => {
         if (data.error) this.setState({ error: data.error });
         else {
           this.setState({
@@ -89,12 +88,11 @@ class NewPost extends Component {
             body: "",
             source: "",
             url: "",
-            slug: "",
             category: "Web Development",
             subcategory: "",
             postType: "",
             freeOrPaid: "",
-            redirectToProfile: true
+            redirectToProfile: true,
           });
         }
       });
@@ -147,17 +145,6 @@ class NewPost extends Component {
           className="input"
           value={body}
           placeholder="Description"
-        />
-      </div>
-
-      <div className="field" style={{ textAlign: "center" }}>
-        <label className="label">Slug</label>
-        <input
-          onChange={this.handleChange("slug")}
-          type="text"
-          className="input"
-          value={slug}
-          placeholder="slug"
         />
       </div>
 
@@ -342,7 +329,6 @@ class NewPost extends Component {
       title,
       body,
       source,
-      slug,
       category,
       subcategory,
       postType,
@@ -352,7 +338,7 @@ class NewPost extends Component {
       user,
       error,
       loading,
-      redirectToProfile
+      redirectToProfile,
     } = this.state;
 
     if (redirectToProfile) {
@@ -386,7 +372,6 @@ class NewPost extends Component {
               body,
               url,
               source,
-              slug,
               category,
               subcategory,
               photo,

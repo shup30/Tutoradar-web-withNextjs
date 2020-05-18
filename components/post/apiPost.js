@@ -39,8 +39,8 @@ export const listByProgramming = (page, cat, fop, ptq) => {
     .catch(err => console.log(err));
 };
 
-export const singlePost = postId => {
-  return fetch(`${process.env.REACT_APP_API_URL}/post/${postId}`, {
+export const singlePost = slug => {
+  return fetch(`${process.env.REACT_APP_API_URL}/post/${slug}`, {
     method: "GET"
   })
     .then(response => {

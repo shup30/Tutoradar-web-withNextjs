@@ -23,8 +23,8 @@ $violet-text: rgb(197, 183, 204);
 .title {
   color: #000000;
   font-size: 1.8rem;
-  font-weight: 500;
-  font-family: 'Sigmar One', cursive;
+  font-weight: 600;
+  font-family: "Lato", sans-serif;
   text-align: center;
 }
 
@@ -57,7 +57,7 @@ body {
 
 #myUL {
   li {
-    background-color: #e22929;
+    background-color: #000000;
   }
   a {
     font-size: 1.2rem;
@@ -388,4 +388,20 @@ a.navbar-item.is-active,
   box-shadow: -12px -12px 12px 0 rgba(255, 255, 255, 1),
     12px 12px 12px 0 rgba(0, 0, 0, 0.12);
   border-radius: 5px;
+}
+
+.course-detail-main{
+    position: relative;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.header-des {
+  position: absolute;
+  bottom: 15px;
+  left: 16px;
+}
+
+.tile.is-child {
+  margin: 20px !important;
 }

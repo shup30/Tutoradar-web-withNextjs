@@ -20,6 +20,24 @@ exports.postById = (req, res, next, id) => {
     });
 };
 
+exports.postBySlug = (req, res, next, slug) => {
+  Post.findBySlug(slug)
+    .populate("postedBy", "_id name")
+    .populate("comments.postedBy", "_id name")
+    .populate("postedBy", "_id name role")
+    .select("_id title body created likes comments photo")
+    .exec((err, post) => {
+      if (err || !post) {
+        return res.status(400).json({
+          error: err
+        });
+      }
+      req.post = post;
+      next();
+    });
+};
+
+
 // exports.getPosts_category_webdev = async (req, res) => {
 //   const currentPage = req.query.page || 1;
 //   const perPage = 6;
@@ -67,7 +85,7 @@ exports.getPosts_programming = async (req, res) => {
         .populate("comments", "text created")
         .populate("comments.postedBy", "_id name")
         .populate("postedBy", "_id name")
-        .select("_id title body created category subcategory postType likes freeOrPaid url slug source")
+        .select("_id title body created category subcategory postType likes freeOrPaid url slug source myslug")
         .limit(perPage)
         .sort({ created: -1 });
     })

@@ -22,8 +22,8 @@ class likeup extends Component {
   };
 
   componentDidMount = () => {
-    console.log(this.props.post._id);
-    const postId = this.props.post._id;
+    console.log(this.props.post.myslug);
+    const postId = this.props.post.myslug;
     singlePost(postId).then(data => {
       if (data.error) {
         console.log(data.error);
